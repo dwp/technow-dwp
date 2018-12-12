@@ -1,0 +1,1380 @@
+<head sp-metatags=""><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-datepicker-popup.dropdown-menu{display:block;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><title>Service Portal - Service Portal </title><meta http-equiv="X-UA-Compatible" content="IE=edge; IE=10"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="cache-control" content="public"><meta http-equiv="cache-control" content="no-cache"><meta http-equiv="cache-control" content="max-age=0"><meta http-equiv="pragma" content="no-cache"><link href="favicon.ico?v=4" rel="shortcut icon"><link href="images/mobile/apple_touch_snc.png?v=09-12-2018_0933" rel="apple-touch-icon"><link type="text/css" rel="stylesheet" href="/styles/css_includes_$sp.cssx?v=09-12-2018_0933"><link href="styles/scss/sp-bootstrap.scss?portal_id=81b75d3147032100ba13a5554ee4902b&amp;v=83230f7137d22300d156dcc773990ebb" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="styles/sp-patch.css?v=83230f7137d22300d156dcc773990ebb"><link type="text/css" rel="stylesheet" href="/scripts/icon-fonts/font-awesome/css/font-awesome.cssx?v=09-12-2018_0933"><script data-description="NOW session, user_name, etc">window.NOW = window.NOW || {};
+		// record watch / presence
+		window.NOW.session_id = '4F238B7137D22300D156DCC773990E83';
+		window.NOW.user_name = 'admin';
+		window.NOW.user_id = '6816f79cc0a8016401c5a33be04be441';
+		window.NOW.user_display_name = 'System Administrator';
+		window.NOW.user_initials = 'SA';
+		window.NOW.user_avatar = 'c148e1d13741310042106710ce41f149.iix?t=small';
+		window.NOW.presence_interval = 15;
+		window.NOW.record_presence_interval = 20;
+		window.NOW.ambConnected = false;</script><script data-description="NOW vars set by properties, custom events, g_* globals">window.g_ck = '83238b7137d22300d156dcc773990e849ed2201402f095d051449ba7795046a166dcd310';
+		window.logged_in = true;
+		if (!window.NOW)
+			window.NOW = {};
+		window.NOW.ac_wait_time = parseInt(250);
+		window.NOW.sp_dual_list_default_view = '';
+		window.NOW.sp_debug = 'false' == 'true';
+		window.NOW.sp_show_console_error = 'true' == 'true' && true;
+		window.NOW.page_id = '';
+		window.NOW.has_access = 'true' === 'true';
+		// script checks for environment
+		// if (NOW.sp) ...
+		// added Aug 1, 2016
+		window.NOW.sp = {};
+		window.NOW.sp.version = {};
+		window.NOW.sp.version.major = 1;
+		window.NOW.sp.version.minor = 2;
+		window.NOW.sp.version.dot = 0;
+
+		// SP doesn't define app resources yet
+		window.SN_APP_RESOURCES = {};
+
+		// script globals
+		var g_tz_offset = 0;
+		var g_tz = 'Europe/London';
+		var g_first_day_of_week = parseInt(1, 10);
+		var g_date_picker_first_day_of_week = parseInt(0, 10);
+		var g_ck = '83238b7137d22300d156dcc773990e849ed2201402f095d051449ba7795046a166dcd310';
+		var g_searchWaitTime = 100;
+		var g_amb_on_login = false;
+
+		var g_lang = 'en';
+		var g_system_lang = "en";
+		var g_user_date_time_format = "dd/MM/yyyy HH:mm:ss";
+		var g_user_date_format = "dd/MM/yyyy";
+		var g_user_decimal_separator = ".";
+		var g_user_grouping_separator = ",";
+		var g_text_direction = "ltr";
+		var g_accessibility = "false";
+		var g_accessibility_visual_patterns = false;
+		var g_glide_list_separator = ", ";
+		var g_sort_elements_by_session_language = "true" == "true";
+		var g_mandatory_field_msg = 'Some fields are incomplete:';
+		var g_field_error_msg = 'The following fields contains error:';</script><script type="text/javascript" src="/scripts/js_includes_sp.jsx?v=09-12-2018_0933&amp;lp=Mon_Jul_02_05_37_25_PDT_2018&amp;c=4_50"></script><script data-description="set sp.dependencies">(function(){
+			angular.module('sp.dependencies', []);
+		    var portal = JSON.parse('{\"sp_rectangle_menu\":\"d150fd31cb10020000f8d856634c9ce6\",\"sqanda_knowledge_base_dv\":\"\",\"sc_category_page_dv\":\"\",\"icon\":\"\",\"sc_catalog\":\"e0d08b13c3330100c8b837659bba8fb4\",\"kb_knowledge_page_dv\":\"kb_view2\",\"title\":\"Service Portal \",\"sys_class_name\":\"sp_portal\",\"sys_id\":\"81b75d3147032100ba13a5554ee4902b\",\"theme_dv\":\"Stock\",\"default\":true,\"homepage_dv\":\"index\",\"notfound_page_dv\":\"404\",\"sc_catalog_dv\":\"Service Catalog\",\"logo\":\"15d1fbf10b311200b0b02c6317673a24.iix\",\"sys_name\":\"Service Portal \",\"sp_rectangle_menu_dv\":\"SP Header Menu\",\"theme\":\"79315153cb33310000f8d856634c9c4b\",\"sc_catalog_page_dv\":\"\",\"sys_class_name_dv\":\"Service Portal\",\"quick_start_config\":\"[{\\n\\t\\\"tagline\\\": {\\n\\t\\t\\\"table\\\" : \\\"sp_instance\\\",\\n\\t\\t\\\"sys_id\\\" : \\\"34fe3d96cb20020000f8d856634c9cf4\\\",\\n\\t\\t\\\"field\\\" : \\\"title\\\"\\n\\t},\\n\\t\\\"hero_background\\\": {\\n\\t\\t\\\"table\\\" : \\\"sp_container\\\",\\n\\t\\t\\\"sys_id\\\" : \\\"be98a8d2cb20020000f8d856634c9c63\\\",\\n\\t\\t\\\"field\\\" : \\\"background_image\\\"\\n\\t}\\n}]\",\"kb_knowledge_page\":\"26c2e030d7201200a9addd173e24d437\",\"sys_tags\":\"\",\"login_page_dv\":\"landing\",\"sp_chat_queue_dv\":\"\",\"css_variables\":\"$grid-gutter-width: 15px !default;\",\"notfound_page\":\"3c2c9063cb11020000f8d856634c9c1f\",\"kb_knowledge_base_dv\":\"IT\",\"kb_knowledge_base\":\"a7e8a78bff0221009b20ffffffffff17\",\"login_page\":\"36c61807cb31120000f8d856634c9ca9\",\"url_suffix\":\"sp\",\"homepage\":\"46cc384147532100ba13a5554ee49009\"}');
+			angular.module('sp.pageData', []).factory('spPageData', function() {
+					return {
+						getPortal: function () {
+							return portal;
+						}
+		            }
+		    });
+		})();</script><script>$(document).ready(function() {
+					if ('ontouchstart' in window || (navigator.maxTouchPoints !== 'undefined' && navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints !== 'undefined' && navigator.msMaxTouchPoints > 0)) {
+						$("body").addClass('touch_scroll');
+					}
+				});</script><style type="text/css">.gsfBackground {
+				border-color: #fff779;
+				font-size: 16;
+				margin-bottom: 5;
+			}</style><style></style><style></style><style type="text/css" data-page-id="46cc384147532100ba13a5554ee49009" data-page-title="Service Portal">
+.page-46cc384147532100ba13a5554ee49009 section.page {
+	background-color: #fff;
+}
+
+.page-46cc384147532100ba13a5554ee49009 section.page,
+.page-46cc384147532100ba13a5554ee49009 main.body {
+	padding-top: 0px !important;
+}</style><script src="/scripts/angular-truncate.js" async=""></script><style type="text/css" id="vbf5ec2f2cb10120000f8d856634c9c0c-s" widget="Stock Header">
+.vbf5ec2f2cb10120000f8d856634c9c0c .navbar {
+	transition: 250ms opacity ease-in-out;
+	-webkit-transition: 250ms opacity ease-in-out;
+	border: 0;
+	border-bottom: 4px solid #455464;
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .navbar-fade {
+	opacity: .4;
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .navbar-inverse .navbar-toggle {
+	border-color: rgba(255, 255, 255, .25);
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c header[role="banner"],
+.vbf5ec2f2cb10120000f8d856634c9c0c .nav > li > a {
+	max-height: 60px;
+}
+@media screen and (max-width: 768px) {
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .nav > li > a {
+	padding-right: .5rem;
+	padding-left: .5rem;
+}
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .navbar-brand {
+	max-height: 60px;
+	padding: 0;
+	padding-bottom: .5rem;
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .navbar-brand img,
+.vbf5ec2f2cb10120000f8d856634c9c0c .navbar-brand span {
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+	display: block;
+	max-height: 46px;
+	max-width: 200px;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .breadcrumb-container {
+	background-color: #fff;
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .navbar-inverse.is-native {
+	background-color: #405060;
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c nav {
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .navbar-collapse {
+	padding-right: 0px;
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .navbar-nav {
+	margin: 0px;
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .scrollable-dropdown {
+	max-height: 80vh;
+	overflow: auto;
+	height: auto;
+}
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .is-native .scrollable-dropdown {
+	max-height: 100vh;
+	overflow: scroll;
+	height: auto;
+}
+@media screen and (min-width: 768px) {
+
+.vbf5ec2f2cb10120000f8d856634c9c0c .navbar-collapse {
+	display: flex !important;
+}
+}</style><style type="text/css" id="v200fbd96cb20020000f8d856634c9ca1-s" widget="Homepage Search">
+.v200fbd96cb20020000f8d856634c9ca1 .sp-tagline-color {
+	color: #717171;
+}</style><style type="text/css" id="vfa20ec02cb31020000f8d856634c9ce9-s" widget="Typeahead Search">
+.vfa20ec02cb31020000f8d856634c9ce9 ul.dropdown-menu {
+	min-width: 100%;
+	border-radius: 0px 0px 4px 4px;
+	margin: 0px;
+}
+
+.vfa20ec02cb31020000f8d856634c9ce9 ul.dropdown-menu a.ta-item {
+	line-height: 20px;
+}
+
+.vfa20ec02cb31020000f8d856634c9ce9 ul.dropdown-menu i.ta-icon,
+.vfa20ec02cb31020000f8d856634c9ce9 i.ta-img {
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-align: center;
+	line-height: 20px;
+	float: left;
+	margin-right: 8px;
+}
+
+.vfa20ec02cb31020000f8d856634c9ce9 input[name="q"] {
+	color: black;
+}</style><style type="text/css" id="v3caa67afcb13020000f8d856634c9c2e-s" widget="Icon Link">
+.v3caa67afcb13020000f8d856634c9c2e .iconlink a label,
+.v3caa67afcb13020000f8d856634c9c2e h2 {
+	display: block;
+	font-size: 2.5rem;
+	font-weight: 300;
+	line-height: 1.1;
+	padding: 0;
+	margin: 0 0 10px 0;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e a.top_icon {
+	display: block;
+	padding: 20px;
+	text-align: center;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e a.top_icon .fa {
+	display: block;
+	text-align: center;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e a.circle_icon {
+	display: block;
+	padding: 20px 0px 20px 70px;
+	position: relative;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e a.circle_icon .fa {
+	position: absolute;
+	left: 0px;
+	top: 10px;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e a.color_box {
+	display: block;
+	position: relative;
+	padding: 20px 20px 20px 82px;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e a.color_box .fa {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	width: 42px;
+	text-align: center;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .icon-link-background-primary {
+	background-color: #428bca;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .icon-link-background-info {
+	background-color: #5bc0de;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .icon-link-background-success {
+	background-color: #5cb85c;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .icon-link-background-warning {
+	background-color: #f0ad4e;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .icon-link-background-danger {
+	background-color: #d9534f;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .icon-link-background-default {
+	background-color: #428bca;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-primary {
+	color: #428bca;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-primary:hover {
+	color: #245682;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-info {
+	color: #5bc0de;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-info:hover {
+	color: #2390b0;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-success {
+	color: #5cb85c;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-success:hover {
+	color: #357935;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-warning {
+	color: #f0ad4e;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-warning:hover {
+	color: #c77c11;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-danger {
+	color: #d9534f;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-danger:hover {
+	color: #a02622;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-default {
+	color: #428bca;
+}
+
+.v3caa67afcb13020000f8d856634c9c2e .text-default:hover {
+	color: #245682;
+}</style><style type="text/css" id="v1e699082d7001200a9addd173e24d4e3-s" widget="Current Status">
+.v1e699082d7001200a9addd173e24d4e3 .bs-callout {
+	margin: 10px 0 !important;
+	padding: 20px !important;
+	border-left-style: solid;
+	border-left-width: 10px;
+	color: #3a3f51;
+}
+
+.v1e699082d7001200a9addd173e24d4e3 .bs-callout-outage {
+	background-color: #fdf7f7;
+	border-color: #d9534f;
+}
+
+.v1e699082d7001200a9addd173e24d4e3 .bs-callout-degradation {
+	background-color: #fef9f3;
+	border-color: #f0ad4e;
+}
+
+.v1e699082d7001200a9addd173e24d4e3 .bs-callout-planned {
+	background-color: #f0f9fc;
+	border-color: #5bc0de;
+}
+
+.v1e699082d7001200a9addd173e24d4e3 .bs-callout-success {
+	background-color: #eaf6ea;
+	border-color: #5cb85c;
+}
+
+.v1e699082d7001200a9addd173e24d4e3 .tooltip-inner {
+	width: 150px;
+}
+
+.v1e699082d7001200a9addd173e24d4e3 div.sp-outage-details {
+	margin-bottom: -10px;
+}</style><style type="text/css" id="v3c817b52cb30020000f8d856634c9cfb-s" widget="KB Top Rated">
+.v3c817b52cb30020000f8d856634c9cfb .list-group-item {
+	padding: 0;
+	border: none;
+}</style><style type="text/css" id="v2685ab42d730120023c84f80de6103a0-s" widget="Subscribed Questions">
+.v2685ab42d730120023c84f80de6103a0 .list-group {
+	max-height: none;
+	overflow-y: auto;
+}
+
+.v2685ab42d730120023c84f80de6103a0 .question-votes,
+.v2685ab42d730120023c84f80de6103a0 .question-answers {
+	padding-left: 4px;
+}
+
+.v2685ab42d730120023c84f80de6103a0 .question-profile {
+	white-space: nowrap;
+}</style><script src="/angular-ellipsis.min.js.jsdbx" async=""></script><style type="text/css" id="ve0c3a791d721120023c84f80de610304-s" widget="Popular Questions">
+.ve0c3a791d721120023c84f80de610304 p {
+	margin-bottom: 15px;
+}</style><style type="text/css" id="v6506d341cb33020000f8d856634c9cdc-s" widget="Login">
+.v6506d341cb33020000f8d856634c9cdc .set-login-type-link {
+	margin-top: 10px;
+	display: block;
+}
+
+.v6506d341cb33020000f8d856634c9cdc .form-control,
+.v6506d341cb33020000f8d856634c9cdc label[for="username"],
+.v6506d341cb33020000f8d856634c9cdc label[for="password"] {
+	color: black;
+}
+
+.v6506d341cb33020000f8d856634c9cdc .btn {
+	font-weight: 600;
+	font-size: 2rem;
+	background-color: #176AAD;
+	border-color: #0B4E85;
+}</style><style type="text/css" id="v5b255672cb03020000f8d856634c9c28-s" widget="Simple List">
+.v5b255672cb03020000f8d856634c9c28 .panel {
+	position: relative;
+}
+
+.v5b255672cb03020000f8d856634c9c28 .panel-heading i {
+	cursor: pointer;
+	position: absolute;
+	padding: 10px;
+	top: 0px;
+	right: 0px;
+	cursor: pointer;
+}
+
+.v5b255672cb03020000f8d856634c9c28 .disabled-filter {
+	color: #A0A0A0;
+}
+
+.v5b255672cb03020000f8d856634c9c28 .list-group-item.ng-enter {
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	background-color: #c0dcfa;
+}
+
+.v5b255672cb03020000f8d856634c9c28 .list-group-item.ng-enter-active {
+	background-color: #fff;
+}
+
+.v5b255672cb03020000f8d856634c9c28 .hide-x-overflow {
+	overflow-x: hidden;
+}
+
+.v5b255672cb03020000f8d856634c9c28 .translated-html > p {
+	margin: 0px;
+	padding: 0px;
+}
+
+.v5b255672cb03020000f8d856634c9c28 IMG {
+	max-width: 320px;
+	max-height: 240px;
+}
+
+.v5b255672cb03020000f8d856634c9c28 IMG.img-sm {
+	max-height: 40px;
+	max-width: 40px;
+}
+
+.v5b255672cb03020000f8d856634c9c28 .filter-box {
+	margin-top: 10px;
+}
+
+.v5b255672cb03020000f8d856634c9c28 .panel-footer .number-shown-label {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 16px;
+	display: inline-block;
+}
+
+.v5b255672cb03020000f8d856634c9c28 .panel-footer a {
+	color: inherit;
+}</style><style type="text/css" id="v9cfd91940b4103002600425663673a31-s" widget="SC Scroll to top">@media only screen and (max-width : 992px) {
+
+.v9cfd91940b4103002600425663673a31 .button-to-top {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	border-radius: 5px !important;
+	opacity: .7 !important;
+	padding: 12px !important;
+	border: 1px solid !important;
+	width: 47px;
+	height: 45px;
+	background-color: #ddd;
+}
+}</style><style type="text/css" id="v5ef595c1cb12020000f8d856634c9c6e-s" widget="Header Menu">
+.v5ef595c1cb12020000f8d856634c9c6e .header-loader {
+	float: left;
+	width: 24px;
+	position: relative;
+	top: 24px;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu {
+	width: 350px;
+	padding: 0;
+	z-index: 1000;
+	border-top-left-radius: 4px !important;
+	border-top-right-radius: 4px !important;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown ul,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu ul {
+	max-height: 300px;
+	overflow: auto;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown .subtotal,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu .subtotal {
+	display: block;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown .item-image,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu .item-image {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	max-width: 100%;
+	height: auto;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown label,
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown p,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu label,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu p {
+	padding: 0;
+	margin: 0;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown .media,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu .media {
+	padding: 0;
+	margin: 0;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown .media-left > a,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu .media-left > a {
+	display: block;
+	width: 48px;
+	max-width: 48px;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown .media-body label,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu .media-body label {
+	font-weight: bold;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown li.media,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu li.media {
+	border-top: 1px solid #cccccc;
+	padding: 1rem;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown .panel,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu .panel {
+	margin: 0;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown .panel .panel-body,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu .panel .panel-body {
+	padding: 0;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown .btn-clear,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu .btn-clear {
+	color: #333;
+	background-color: #fff;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown p.quantity-price,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu p.quantity-price {
+	padding-top: .5rem;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown p.quantity-price span,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu p.quantity-price span {
+	color: #979797;
+	padding-right: .5rem;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .cart-dropdown .align-right,
+.v5ef595c1cb12020000f8d856634c9c6e .wishlist-menu .align-right {
+	text-align: right;
+}
+
+.v5ef595c1cb12020000f8d856634c9c6e .item-added-tooltip,
+.v5ef595c1cb12020000f8d856634c9c6e wishlist-item-added-tooltip {
+	width: 184px;
+	font-size: 14px;
+}</style><style type="text/css" id="v94c300c7e777320075c2a117c2f6a9e7-s" widget="Announcements">
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root p {
+	margin: 0;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root li {
+	display: flex;
+	max-height: 62px;
+	overflow: hidden;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root h2.panel-title span {
+	margin-right: 2px;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .details {
+	width: 100%;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .details div.title {
+	display: flex;
+	width: 100%;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .details div.title div,
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .details div.title a {
+	width: 100%;
+	flex-grow: 1;
+	color: #428bca;
+	max-height: 40px;
+	overflow: hidden;
+	-webkit-transition: max-height .1s ease-out;
+	-moz-transition: max-height .1s ease-out;
+	-o-transition: max-height .1s ease-out;
+	transition: max-height .1s ease-out;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .details div.title a:hover {
+	color: #023363;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .details p {
+	max-height: 0;
+	overflow: hidden;
+	-webkit-transition: max-height .1s ease-out;
+	-moz-transition: max-height .1s ease-out;
+	-o-transition: max-height .1s ease-out;
+	transition: max-height .1s ease-out;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .details a.info-link {
+	display: none;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .glyphicon {
+	cursor: pointer;
+	visibility: hidden;
+	height: 14px;
+	margin-left: 10px;
+	-webkit-transition: transform .1s ease-out;
+	-moz-transition: transform .1s ease-out;
+	-o-transition: transform .1s ease-out;
+	transition: transform .1s ease-out;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .can-expand .glyphicon {
+	visibility: visible;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root li.expanded {
+	max-height: 1500px;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root li.expanded .glyphicon {
+	-webkit-transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+	-webkit-transition: transform .1s ease-in;
+	-moz-transition: transform .1s ease-in;
+	-o-transition: transform .1s ease-in;
+	transition: transform .1s ease-in;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root li.expanded .details a.info-link {
+	display: inline-block;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root li.expanded .details p {
+	margin: 7.5px 0;
+	max-height: 1000px;
+	-webkit-transition: max-height .5s ease-in;
+	-moz-transition: max-height .5s ease-in;
+	-o-transition: max-height .5s ease-in;
+	transition: max-height .5s ease-in;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root li.expanded .details div.title div,
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root li.expanded .details div.title a {
+	max-height: 500px;
+	-webkit-transition: max-height .15s ease-in;
+	-moz-transition: max-height .15s ease-in;
+	-o-transition: max-height .15s ease-in;
+	transition: max-height .15s ease-in;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .no-margin {
+	margin-top: 0 !important;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .panel-footer a {
+	color: inherit;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root .panel-footer a.push-margin {
+	margin-top: 6px;
+}
+
+.v94c300c7e777320075c2a117c2f6a9e7 .spw-announcements-root.accessibility-off [tabindex]:focus {
+	outline: none;
+	border: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}</style><style type="text/css" id="v7589060c87290300e0ef0cf888cb0ba5-s" widget="SC Shopping Cart">
+.v7589060c87290300e0ef0cf888cb0ba5 td {
+	vertical-align: middle !important;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .media-body .btn-link {
+	padding-left: 0;
+	padding-right: 0;
+	color: #428bca;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .media-body .btn-link:hover {
+	color: #3071a9;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .media-body .btn-link:focus {
+	color: #3071a9;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .btn-remove {
+	font-size: 18px !important;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .action-btn {
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .action-btn.btn-link {
+	color: #428bca;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .list-group {
+	max-height: 250px;
+	overflow-y: auto;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .list-group-item.ng-enter {
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	background-color: #c0dcfa;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .list-group-item.ng-enter-active {
+	background-color: #fff;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .empty-cart {
+	font-style: italic;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 7px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .view-carts-link {
+	text-align: center;
+	display: block;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .order-details-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 5px 10px 10px 10px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .order-details-container .order-details {
+	padding: 5px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .order-details-container .order-details textarea {
+	resize: none;
+	flex-basis: 100%;
+	flex-shrink: 1;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .order-details-container .requested-for-details {
+	flex: 1 0 auto;
+	max-width: 100%;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .order-details-container .special-instructions-details textarea {
+	height: calc(100% - 25px);
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .item-image {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .empty-state-content {
+	margin-top: 30px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .empty-state-content.small-cart {
+	margin-top: 0px;
+	padding: 10px 20px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .empty-state-content .fa-shopping-cart {
+	color: #edf1f2;
+	font-size: 80px;
+	display: block;
+	text-align: center;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .empty-state-content .fa-shopping-cart.small-cart {
+	font-size: 40px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .empty-state-content .h3 {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .empty-state-content .h4 {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .empty-state-content p {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .empty-state-content .btn {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	max-width: 100%;
+	margin-bottom: 35px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .large-checkout {
+	display: inline-block;
+	float: none !important;
+	width: 100%;
+	margin-top: 15px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .item-row:hover .btn-clear {
+	background-color: #f5f5f5;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .sc-btn {
+	margin-bottom: 10px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .sc-btn-group {
+	clear: right;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .sc-remove-btn:hover {
+	background-color: #d9534f;
+	color: #fff;
+	border-color: #c9302c;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .btn-group-justified > .btn-group {
+	padding: 0 5px;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .btn-group-justified > .btn-group .btn {
+	border-radius: 4px !important;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .cart-table th {
+	position: sticky;
+	-webkit-position: sticky;
+	top: -1px;
+	z-index: 10;
+	background-color: #fff;
+	box-shadow: 0px 1px 0px #ddd;
+}
+@media only screen and (max-width : 992px) {
+
+.v7589060c87290300e0ef0cf888cb0ba5 .sc-btn,
+.v7589060c87290300e0ef0cf888cb0ba5 .sc-btn-group {
+	width: 100%;
+}
+
+.v7589060c87290300e0ef0cf888cb0ba5 .item-image {
+	max-width: 70px;
+}
+}</style></head><body class="chrome ng-scope fixed-header" ng-class="main.style" ng-controller="spPageCtrl as main" accessibility="false" style=""><div class="sp-page-root page flex-column sp-can-animate" ng-class="{'sp-can-animate': main.doAnimate}" style=""><!-- ngIf: page.draft --><!-- ngIf: main.firstPage --><!-- ngIf: theme.header && theme.navbar_fixed --><header ng-if="theme.header &amp;&amp; theme.navbar_fixed" class="ng-scope" role="banner" style=""><!-- ngIf: c.totalAnnouncements !== 0 --><div class="vbf5ec2f2cb10120000f8d856634c9c0c ng-scope" data="data" options="options" widget="widget" server="server"><div>
+ <nav class="navbar-inverse navbar" ng-class="::{'navbar':!isViewNative, 'is-native': isViewNative}" role="navigation">
+  <div ng-show="::!isViewNative" class="navbar-header" aria-hidden="false">
+   <!-- ngIf: ::!portal.logo -->
+   <!-- ngIf: ::portal.logo --><a class="navbar-brand navbar-brand-logo ng-scope" ng-if="::portal.logo" href="?id=index" aria-label="Go to homepage" role="link"> <img ng-src="15d1fbf10b311200b0b02c6317673a24.iix" title="ServiceNow" role="presentation" alt="Portal Logo" src="15d1fbf10b311200b0b02c6317673a24.iix"> </a><!-- end ngIf: ::portal.logo -->
+   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sp-nav-bar" role="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+  </div>
+  <div sp-navbar-toggle="" class="collapse navbar-collapse navbar-right scrollable-dropdown" id="sp-nav-bar">
+   <!-- Include The Menu -->
+   <ul class="v5ef595c1cb12020000f8d856634c9c6e nav navbar-nav ng-scope" aria-label="Header menu" id="xd150fd31cb10020000f8d856634c9ce6" data="data" options="options" widget="widget" server="server">
+ <div class="header-loader ng-hide" ng-show="loadingIndicator" aria-hidden="true" style="">
+  <div class="hidden-xs sp-loading-indicator la-sm">
+   <div></div>
+   <div></div>
+   <div></div>
+  </div>
+ </div>
+ <!-- ngRepeat: item in visibleItems --><!-- ngInclude: 'menuTemplate' --><li ng-repeat="item in visibleItems" ng-class="{dropdown: item.items.length > 0, 'header-menu-item': true}" ng-include="'menuTemplate'" class="ng-scope header-menu-item" style=""><!-- ngIf: item.items.length == 0 && !item.scriptedItems --><a ng-if="item.items.length == 0 &amp;&amp; !item.scriptedItems" ng-href="?id=kb_view2" target="" title="" class="ng-scope" role="link" href="?id=kb_view2">
+ <!-- ngIf: ::item.glyph --> <span ng-bind-html="::item.label" class="ng-binding">Knowledge</span> </a><!-- end ngIf: item.items.length == 0 && !item.scriptedItems -->
+<!-- ngIf: item.items.length > 0 -->
+<!-- ngIf: item.items.length > 0 -->
+<!-- ngIf: item.scriptedItems.count > 0 -->
+<!-- ngIf: item.scriptedItems.count > 0 --></li><!-- end ngRepeat: item in visibleItems --><!-- ngInclude: 'menuTemplate' --><li ng-repeat="item in visibleItems" ng-class="{dropdown: item.items.length > 0, 'header-menu-item': true}" ng-include="'menuTemplate'" class="ng-scope header-menu-item"><!-- ngIf: item.items.length == 0 && !item.scriptedItems --><a ng-if="item.items.length == 0 &amp;&amp; !item.scriptedItems" ng-href="?id=sc_home" target="" title="" class="ng-scope" role="link" href="?id=sc_home">
+ <!-- ngIf: ::item.glyph --> <span ng-bind-html="::item.label" class="ng-binding">Service Catalog</span> </a><!-- end ngIf: item.items.length == 0 && !item.scriptedItems -->
+<!-- ngIf: item.items.length > 0 -->
+<!-- ngIf: item.items.length > 0 -->
+<!-- ngIf: item.scriptedItems.count > 0 -->
+<!-- ngIf: item.scriptedItems.count > 0 --></li><!-- end ngRepeat: item in visibleItems --><!-- ngInclude: 'menuTemplate' --><li ng-repeat="item in visibleItems" ng-class="{dropdown: item.items.length > 0, 'header-menu-item': true}" ng-include="'menuTemplate'" class="ng-scope header-menu-item"><!-- ngIf: item.items.length == 0 && !item.scriptedItems -->
+<!-- ngIf: item.items.length > 0 -->
+<!-- ngIf: item.items.length > 0 -->
+<!-- ngIf: item.scriptedItems.count > 0 --><a role="button" ng-if="item.scriptedItems.count > 0" href="" data-toggle="dropdown" title="My Requests" class="ng-scope">
+ <!-- ngIf: ::item.glyph --> <span ng-bind-html="::item.label" class="ng-binding">Requests</span> <!-- ngIf: ::!item.scriptedItems.omitBadge --><span ng-if="::!item.scriptedItems.omitBadge" class="label label-as-badge label-primary sp-navbar-badge-count ng-binding ng-scope">24</span><!-- end ngIf: ::!item.scriptedItems.omitBadge --> </a><!-- end ngIf: item.scriptedItems.count > 0 -->
+<!-- ngIf: item.scriptedItems.count > 0 --><ul class="dropdown-menu ng-scope ng-isolate-scope" role="menu" aria-label="Requests" ng-if="item.scriptedItems.count > 0" items="item.scriptedItems.items"><!-- ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' --><a ng-if="mi.type == 'link'" title="View all requests" target="" ng-href="?id=requests" class="ng-binding ng-scope" role="link" href="?id=requests"> View all requests </a><!-- end ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Shared folder: create new and add people" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=cd0d851837d22300d156dcc773990e7f" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=cd0d851837d22300d156dcc773990e7f"> <span class="ng-binding">Shared folder: create new and add people</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="06/12/2018, 15:12:23" class="ng-binding">6d ago</time></sn-time-ago> </span> REQ0010029 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Shared folder: create new and add people" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=e950a0d837522300d156dcc773990e06" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=e950a0d837522300d156dcc773990e06"> <span class="ng-binding">Shared folder: create new and add people</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="06/12/2018, 11:57:11" class="ng-binding">6d ago</time></sn-time-ago> </span> REQ0010028 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Shared folder: create new and add people" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=dbf60c9437122300d156dcc773990ed0" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=dbf60c9437122300d156dcc773990ed0"> <span class="ng-binding">Shared folder: create new and add people</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="06/12/2018, 10:06:27" class="ng-binding">6d ago</time></sn-time-ago> </span> REQ0010027 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Group mailboxes: add people" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=680d04b737312300d156dcc773990e7c" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=680d04b737312300d156dcc773990e7c"> <span class="ng-binding">Group mailboxes: add people</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="22/11/2018, 11:00:06" class="ng-binding">20d ago</time></sn-time-ago> </span> REQ0010026 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Smart card or USB dongle: replace" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=1d2e43ba37612300d156dcc773990e96" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=1d2e43ba37612300d156dcc773990e96"> <span class="ng-binding">Smart card or USB dongle: replace</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="07/11/2018, 12:14:17" class="ng-binding">about a month ago</time></sn-time-ago> </span> REQ0010025 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="TDA or RA: add to profile" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=35072f0e37012300d156dcc773990ef0" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=35072f0e37012300d156dcc773990ef0"> <span class="ng-binding">TDA or RA: add to profile</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="11/10/2018, 10:36:11" class="ng-binding">2mo ago</time></sn-time-ago> </span> REQ0010024 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Smart card or USB dongle: replace" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=7b4a52e937c12300d156dcc773990eb5" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=7b4a52e937c12300d156dcc773990eb5"> <span class="ng-binding">Smart card or USB dongle: replace</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="09/10/2018, 15:44:01" class="ng-binding">2mo ago</time></sn-time-ago> </span> REQ0010022 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="2 requested items" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=03179eed37812300d156dcc773990efc" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=03179eed37812300d156dcc773990efc"> <span class="ng-binding">2 requested items</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="09/10/2018, 15:30:02" class="ng-binding">2mo ago</time></sn-time-ago> </span> REQ0010021 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="3 requested items" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=7c6652a537c12300d156dcc773990e8a" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=7c6652a537c12300d156dcc773990e8a"> <span class="ng-binding">3 requested items</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="09/10/2018, 15:26:53" class="ng-binding">2mo ago</time></sn-time-ago> </span> REQ0010020 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Accessories" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=1b151a6537c12300d156dcc773990e07" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=1b151a6537c12300d156dcc773990e07"> <span class="ng-binding">Accessories</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="09/10/2018, 15:21:19" class="ng-binding">2mo ago</time></sn-time-ago> </span> REQ0010019 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="TDA or RA: remove or change end date" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=f8a0d7eb37b02300d156dcc773990e02" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=f8a0d7eb37b02300d156dcc773990e02"> <span class="ng-binding">TDA or RA: remove or change end date</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="03/10/2018, 14:33:32" class="ng-binding">2mo ago</time></sn-time-ago> </span> REQ0010018 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Smartcard or USB dongle: terminate" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=f21b837637102300d156dcc773990eb2" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=f21b837637102300d156dcc773990eb2"> <span class="ng-binding">Smartcard or USB dongle: terminate</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="06/09/2018, 09:42:32" class="ng-binding">3mo ago</time></sn-time-ago> </span> REQ0010017 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="2 requested items" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=e4ef854537102300d156dcc773990e67" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=e4ef854537102300d156dcc773990e67"> <span class="ng-binding">2 requested items</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="31/08/2018, 14:14:48" class="ng-binding">3mo ago</time></sn-time-ago> </span> REQ0010016 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="2 requested items" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=176f8d8537102300d156dcc773990e2f" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=176f8d8537102300d156dcc773990e2f"> <span class="ng-binding">2 requested items</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="31/08/2018, 14:12:48" class="ng-binding">3mo ago</time></sn-time-ago> </span> REQ0010015 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="TechNow account: create" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=22ddcd4537102300d156dcc773990e0a" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=22ddcd4537102300d156dcc773990e0a"> <span class="ng-binding">TechNow account: create</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="31/08/2018, 14:05:55" class="ng-binding">3mo ago</time></sn-time-ago> </span> REQ0010014 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Smart card or USB dongle: replace" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=3d8c014537102300d156dcc773990ea4" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=3d8c014537102300d156dcc773990ea4"> <span class="ng-binding">Smart card or USB dongle: replace</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="31/08/2018, 14:00:08" class="ng-binding">3mo ago</time></sn-time-ago> </span> REQ0010013 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Group mailbox: manage access" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=f5f0034237c02300d156dcc773990e83" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=f5f0034237c02300d156dcc773990e83"> <span class="ng-binding">Group mailbox: manage access</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="22/08/2018, 14:47:05" class="ng-binding">4mo ago</time></sn-time-ago> </span> REQ0010012 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Apple Watch" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=bcc08f0237c02300d156dcc773990e12" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=bcc08f0237c02300d156dcc773990e12"> <span class="ng-binding">Apple Watch</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="22/08/2018, 14:46:11" class="ng-binding">4mo ago</time></sn-time-ago> </span> REQ0010011 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Group mailbox: manage access" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=5ab1333537b31300d156dcc773990ecb" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=5ab1333537b31300d156dcc773990ecb"> <span class="ng-binding">Group mailbox: manage access</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="09/08/2018, 13:25:56" class="ng-binding">4mo ago</time></sn-time-ago> </span> REQ0010010 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Group mailbox: manage access" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=478db23537331300d156dcc773990e1d" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=478db23537331300d156dcc773990e1d"> <span class="ng-binding">Group mailbox: manage access</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="09/08/2018, 09:37:59" class="ng-binding">4mo ago</time></sn-time-ago> </span> REQ0010009 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="TechNow account: create" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=950f37ef37231300d156dcc773990e8b" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=950f37ef37231300d156dcc773990e8b"> <span class="ng-binding">TechNow account: create</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="02/08/2018, 14:37:42" class="ng-binding">4mo ago</time></sn-time-ago> </span> REQ0010008 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="TechNow account: delete" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=3b81779d37231300d156dcc773990e95" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=3b81779d37231300d156dcc773990e95"> <span class="ng-binding">TechNow account: delete</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="26/07/2018, 13:52:34" class="ng-binding">5mo ago</time></sn-time-ago> </span> REQ0010007 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope dropdown-menu-line"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="Smart card or USB dongle: replace" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=f78adb4337531300d156dcc773990e9d" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=f78adb4337531300d156dcc773990e9d"> <span class="ng-binding">Smart card or USB dongle: replace</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="19/07/2018, 12:25:44" class="ng-binding">5mo ago</time></sn-time-ago> </span> REQ0010006 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --><!-- ngInclude: getURL() --><li ng-repeat="mi in items" style="min-width: 20em;" ng-class="{'dropdown-submenu': mi.type == 'menu', 'dropdown-menu-line':$index < items.length - 1}" ng-include="getURL()" class="ng-scope"><!-- ngIf: mi.type == 'link' -->
+<!-- ngIf: mi.type == 'record' && !mi.__page -->
+<!-- ngIf: mi.type == 'record' && mi.__page -->
+<!-- ngIf: mi.type == 'request' --><a ng-if="mi.type == 'request'" title="TechNow account: delete" ng-href="?id=sc_request&amp;table=sc_request&amp;sys_id=117a1f0337531300d156dcc773990e51" class="ng-scope" role="link" href="?id=sc_request&amp;table=sc_request&amp;sys_id=117a1f0337531300d156dcc773990e51"> <span class="ng-binding">TechNow account: delete</span> <span class="block color-primary text-muted ng-binding"> <span class="block" style="float: right">
+   <sn-time-ago timestamp="::mi.sys_updated_on" class="ng-isolate-scope"><time title="19/07/2018, 12:25:18" class="ng-binding">5mo ago</time></sn-time-ago> </span> REQ0010005 </span> </a><!-- end ngIf: mi.type == 'request' -->
+<!-- ngIf: mi.type == 'approval' -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length -->
+<!-- ngIf: mi.type == 'menu' && mi.items.length --></li><!-- end ngRepeat: mi in items --></ul><!-- end ngIf: item.scriptedItems.count > 0 --></li><!-- end ngRepeat: item in visibleItems --><!-- ngInclude: 'menuTemplate' --><li ng-repeat="item in visibleItems" ng-class="{dropdown: item.items.length > 0, 'header-menu-item': true}" ng-include="'menuTemplate'" class="ng-scope header-menu-item"><!-- ngIf: item.items.length == 0 && !item.scriptedItems --><a ng-if="item.items.length == 0 &amp;&amp; !item.scriptedItems" ng-href="?id=services_status" target="" title="" class="ng-scope" role="link" href="?id=services_status">
+ <!-- ngIf: ::item.glyph --> <span ng-bind-html="::item.label" class="ng-binding">System Status</span> </a><!-- end ngIf: item.items.length == 0 && !item.scriptedItems -->
+<!-- ngIf: item.items.length > 0 -->
+<!-- ngIf: item.items.length > 0 -->
+<!-- ngIf: item.scriptedItems.count > 0 -->
+<!-- ngIf: item.scriptedItems.count > 0 --></li><!-- end ngRepeat: item in visibleItems -->
+ <!-- Wishlist menu -->
+ <!-- ngIf: options.enable_wishlist && data.isLoggedIn && data.showWishlist -->
+ <!-- ngIf: options.enable_wishlist && data.isLoggedIn && data.showWishlist -->
+ <!-- Shopping cart stuff -->
+ <!-- ngIf: ::options.enable_cart && data.isLoggedIn --><li ng-if="::options.enable_cart &amp;&amp; data.isLoggedIn" ng-show="::!accessibilityEnabled" class="dropdown hidden-xs header-menu-item ng-scope" aria-hidden="false" style=""> <a href="" data-toggle="dropdown" id="cart-dropdown" uib-tooltip-template="'item-added-tooltip.html'" tooltip-placement="bottom" tooltip-trigger="'none'" tooltip-is-open="$parent.itemAddedTooltipOpen" title="Your shopping cart currently has 1 items" aria-label="Shopping Cart" role="link"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span ng-bind-html="'Cart'" aria-hidden="true" class="ng-binding">Cart</span> <!-- ngIf: cartItemCount > 0 --><span ng-if="cartItemCount > 0" aria-hidden="true" class="label label-as-badge label-primary sp-navbar-badge-count ng-binding ng-scope">1</span><!-- end ngIf: cartItemCount > 0 --> </a>
+  <div class="dropdown-menu cart-dropdown">
+   <div class="v7589060c87290300e0ef0cf888cb0ba5 ng-scope" data="data" options="options" widget="widget" server="server"><!-- ngIf: options.cartTemplate --><div ng-if="options.cartTemplate" class="ng-scope">
+ <!-- ngInclude: options.cartTemplate --><div ng-include="options.cartTemplate" class="ng-scope"><div class="panel ng-scope">
+ <!-- ngIf: c.data.cartItems.length > 0 --><div class="panel-body ng-scope" ng-if="c.data.cartItems.length > 0">
+  <ul class="media-list">
+   <!-- ngRepeat: item in c.data.cartItems track by item.sys_id --><li class="media ng-scope" ng-repeat="item in c.data.cartItems track by item.sys_id">
+    <div class="media-left">
+     <a ng-href="?id=sc_cat_item&amp;sys_id=12ecc0b737312300d156dcc773990e80&amp;edit=cart" role="link" href="?id=sc_cat_item&amp;sys_id=12ecc0b737312300d156dcc773990e80&amp;edit=cart"> <img ng-show="item.picture" ng-src="" alt="Group mailboxes: add people" class="img-responsive item-image ng-hide" role="presentation" aria-hidden="true"> </a>
+    </div>
+    <div class="media-body">
+     <a ng-href="?id=sc_cat_item&amp;sys_id=12ecc0b737312300d156dcc773990e80&amp;edit=cart" role="link" href="?id=sc_cat_item&amp;sys_id=12ecc0b737312300d156dcc773990e80&amp;edit=cart">
+      <div class="media-heading ng-binding">
+       Group mailboxes: add people
+      </div></a>
+     <p class="ng-binding"> Add a person or a group of people to existing group email accounts  so they can view or send and receive emails</p>
+     <p class="quantity-price"> <!-- ngIf: c.showQuantity($index) --><span class="quantity ng-binding ng-scope" ng-if="c.showQuantity($index)">1 </span><!-- end ngIf: c.showQuantity($index) --> <!-- ngIf: c.showPrice($index) --> <span class="recurring ng-binding ng-hide" ng-show="c.showRecurringPrice($index)" aria-hidden="true"> $0.00 null</span> </p>
+    </div>
+    <div class="media-right">
+     <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-clear" ng-click="c.removeItem($event, item)" aria-label="Remove Item Group mailboxes: add people" title="Remove Item Group mailboxes: add people" role="button"> <i class="fa fa-times-circle btn-remove" aria-hidden="true"></i> </button>
+     </div>
+    </div> </li><!-- end ngRepeat: item in c.data.cartItems track by item.sys_id -->
+  </ul>
+  <!-- ngIf: c.data.cart.cart_items.show_subtotal_price === 'true' -->
+ </div><!-- end ngIf: c.data.cartItems.length > 0 -->
+ <div class="panel-body ng-hide" ng-show="c.data.cartItems.length == 0" aria-hidden="true">
+  <div class="empty-state-content small-cart">
+   <span class="fa fa-shopping-cart small-cart"></span>
+   <div class="h4">
+    Your shopping cart is empty
+   </div>
+   <p>Once you have added items to your shopping cart, you can check out from here.</p>
+  </div>
+ </div>
+ <div class="panel-footer">
+  <div class="btn-group btn-group-justified" role="group">
+   <div class="btn-group" role="group">
+    <a type="button" class="btn btn-default" ng-href="?id=sc_cart" role="link" href="?id=sc_cart">View Cart</a>
+   </div>
+   <!-- ngIf: c.data.cartItems.length > 0 --><div class="btn-group ng-scope" role="group" ng-if="c.data.cartItems.length > 0">
+    <button ng-disabled="c.checkoutInProgress" ng-click="c.triggerCheckout($event)" class="btn btn-primary" role="button"> <span ng-show="!c.checkoutInProgress" aria-hidden="false" class="">Checkout</span> <span ng-show="c.checkoutInProgress" aria-hidden="true" class="ng-hide">Ordering...</span> </button>
+   </div><!-- end ngIf: c.data.cartItems.length > 0 -->
+  </div>
+ </div>
+</div></div>
+ <!-- ngIf: c.checkoutCartModal -->
+ <!-- ngIf: c.saveCartModal -->
+</div><!-- end ngIf: options.cartTemplate -->
+<!-- ngIf: !options.cartTemplate --></div>
+  </div> </li><!-- end ngIf: ::options.enable_cart && data.isLoggedIn -->
+ <!-- ngIf: ::options.enable_cart && data.isLoggedIn --><li ng-if="::options.enable_cart &amp;&amp; data.isLoggedIn" class="dropdown ng-scope visible-xs" ng-class="::{'visible-xs': !accessibilityEnabled}" aria-label="Your shopping cart currently has 1 items" style=""> <a href="?id=sc_cart" title="Cart" class="toggle-dropdown" role="link"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span ng-bind-html="'Cart'" aria-hidden="true" class="ng-binding">Cart</span> <!-- ngIf: cartItemCount > 0 --><span ng-if="cartItemCount > 0" aria-hidden="true" class="label label-as-badge label-primary sp-navbar-badge-count ng-binding ng-scope">1</span><!-- end ngIf: cartItemCount > 0 --> </a> </li><!-- end ngIf: ::options.enable_cart && data.isLoggedIn -->
+</ul>
+   <!-- ngIf: ::(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin) -->
+   <!-- ngIf: ::user.logged_in --><ul ng-if="::user.logged_in" class="nav navbar-nav ng-scope" aria-haspopup="true">
+    <!-- chat, avatar, and logout -->
+    <!-- ngIf: ::data.connect_support_queue_id -->
+    <!-- ngIf: showAvatar --><li ng-if="showAvatar" class="hidden-xs dropdown ng-scope"> <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Press space to access user profile or logout" id="profile-dropdown" role="button" aria-haspopup="true"> <span class="navbar-avatar" aria-hidden="true">
+       <div class="avatar-small-medium avatar-container ng-isolate-scope" ng-class="avatarType()" title="" primary="avatarProfile"><!-- ngIf: (users.length > 1 && !groupAvatar) --><div class="avatar soloAvatar bottom ng-scope" context-menu="contextOptions"><div class="sub-avatar" ng-style="getBackgroundStyle(users[0] || primary)" style="background-image: url(&quot;c148e1d13741310042106710ce41f149.iix?t=small&quot;);"><!-- ngIf: (!users[0].avatar && !groupAvatar) --></div></div><!-- ngIf: users.length > 2 && !groupAvatar --><!-- ngIf: users.length > 3 && !groupAvatar --><span class="inner-details ng-scope" ng-transclude=""></span><!-- ngIf: ::presenceEnabled --></div></span> <span class="visible-lg-inline ng-binding">System Administrator</span> </a>
+     <ul class="dropdown-menu" role="menu">
+      <li role="presentation"><a ng-href="?id=user_profile&amp;sys_id=6816f79cc0a8016401c5a33be04be441" role="menuitem" href="?id=user_profile&amp;sys_id=6816f79cc0a8016401c5a33be04be441">Profile</a></li>
+      <!-- ngIf: ::!isViewNative --><li ng-if="::!isViewNative" role="presentation" class="ng-scope"><a href="/logout.do?sysparm_goto_url=/sp" role="menuitem">Logout</a></li><!-- end ngIf: ::!isViewNative -->
+     </ul> </li><!-- end ngIf: showAvatar -->
+    <!-- ngIf: showXSAvatar -->
+    <!-- ngIf: ::!isViewNative --><li ng-if="::!isViewNative" class="visible-xs-block ng-scope"><a href="/logout.do?sysparm_goto_url=/sp" role="link">Logout</a></li><!-- end ngIf: ::!isViewNative -->
+   </ul><!-- end ngIf: ::user.logged_in -->
+  </div>
+ </nav>
+</div></div><!-- ngRepeat: subheader in subheaders --></header><!-- end ngIf: theme.header && theme.navbar_fixed --><div id="uiNotificationContainer"><!-- ngRepeat: m in c.notifications track by $index --></div><section class="flex-grow page sp-scroll"><!-- ngIf: theme.header && !theme.navbar_fixed --><main class="body padding-top" data-page-id="46cc384147532100ba13a5554ee49009" data-page-title="Service Portal" sp-aria="main" role="main"><h1 class="sr-only ng-binding ng-isolate-scope" page-title="page.title">Service Portal</h1><!-- ngRepeat: container in containers --><div ng-repeat="container in containers" ng-style="main.parseJSON(container.background)" ng-class="::[container.class_name, 'c' + container.sys_id]" class="ng-scope hidden-xs cbe98a8d2cb20020000f8d856634c9c63" style="background-size: cover; background-image: url(&quot;0227e806d7121200816403548e6103dd.iix&quot;); background-position: center center;"><div ng-class="::main.getContainerClasses(container)" class="container"><!-- ngIf: ::container.title --><!-- ngRepeat: row in ::container.rows --><sp-page-row ng-repeat="row in ::container.rows" columns="::row.columns" row="::row" container="::container" class="ng-scope ng-isolate-scope"><div class="sp-row-content  row"><!-- ngRepeat: column in columns --><div ng-repeat="column in columns" class=" col-sm-12 "><!-- ngRepeat: row in column.rows --><!-- ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="x34fe3d96cb20020000f8d856634c9cf4" class="v200fbd96cb20020000f8d856634c9ca1 ng-scope" data="data" options="options" widget="widget" server="server"><div id="homepage-search" class="hidden-xs wrapper-xl">
+ <div class="wrapper-xl">
+  <h1 class="text-center text-4x m-b-lg sp-tagline-color ng-binding" ng-bind="options.title">How can we help?</h1>
+  <!-- ngIf: options.short_description -->
+  <div class="vfa20ec02cb31020000f8d856634c9ce9 ng-scope" data="data" options="options" widget="widget" server="server"><form ng-submit="c.submitSearch()" class="ng-pristine ng-valid" role="form">
+ <input type="hidden" name="id" value="search" autocomplete="off">
+ <input type="hidden" name="t" value="" autocomplete="off">
+ <div class="input-group input-group-lg">
+  <!-- uses ui.bootstrap.typeahead -->
+  <input name="q" type="text" placeholder="How can we help?" ng-model="c.searchTerm" autocomplete="off" uib-typeahead="item as item.primary for item in c.getResults($viewValue)" typeahead-wait-ms="250" typeahead-focus-first="false" typeahead-on-select="c.onSelect($item, $model, $label)" typeahead-template-url="sp-typeahead.html" typeahead-popup-template-url="sp-typeahead-popup.html" class="form-control input-typeahead ng-pristine ng-untouched ng-valid ng-empty" title="How can we help?" role="textbox" aria-label="How can we help?" tabindex="0" aria-haspopup="true" aria-autocomplete="list" aria-owns="typeahead-86-2798" data-aria-expanded="false" aria-invalid="false"><ul class="dropdown-menu ng-isolate-scope ng-hide" ng-show="isOpen() &amp;&amp; !moveInProgress" ng-style="{top: position().top+'px', left: position().left+'px'}" role="listbox" aria-hidden="true" uib-typeahead-popup="" id="typeahead-86-2798" matches="matches" active="activeIdx" select="select(activeIdx, evt)" move-in-progress="moveInProgress" query="query" position="position" assign-is-open="assignIsOpen(isOpen)" debounce="debounceUpdate" template-url="sp-typeahead.html" popup-template-url="sp-typeahead-popup.html">
+ <li role="option" aria-hidden="true" style="display: none"></li>
+ <!-- ngRepeat: match in matches track by $index -->
+</ul>
+  <span class="input-group-btn"> <button name="search" type="submit" class="btn btn-default" title="How can we help?" aria-label="How can we help?" role="button"> <!-- ngIf: ::c.options.glyph --><i ng-if="::c.options.glyph" class="fa fa-search"></i><!-- end ngIf: ::c.options.glyph --> </button> </span>
+ </div>
+</form></div>
+ </div>
+</div></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --></div><!-- end ngRepeat: column in columns --></div></sp-page-row><!-- end ngRepeat: row in ::container.rows --></div></div><!-- end ngRepeat: container in containers --><div ng-repeat="container in containers" ng-style="main.parseJSON(container.background)" ng-class="::[container.class_name, 'c' + container.sys_id]" class="ng-scope visible-xs c197e7953d7002200a9addd173e24d45e" style="background-size: initial; background-position: center center;"><div ng-class="::main.getContainerClasses(container)" class="container"><!-- ngIf: ::container.title --><!-- ngRepeat: row in ::container.rows --><sp-page-row ng-repeat="row in ::container.rows" columns="::row.columns" row="::row" container="::container" class="ng-scope ng-isolate-scope"><div class="sp-row-content  row"><!-- ngRepeat: column in columns --><div ng-repeat="column in columns" class=" col-xs-12 "><!-- ngRepeat: row in column.rows --><!-- ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="x3aaeb953d7002200a9addd173e24d465" class="vfa20ec02cb31020000f8d856634c9ce9 ng-scope" data="data" options="options" widget="widget" server="server"><form ng-submit="c.submitSearch()" class="ng-pristine ng-valid" role="form">
+ <input type="hidden" name="id" value="search" autocomplete="off">
+ <input type="hidden" name="t" value="" autocomplete="off">
+ <div class="input-group input-group-md">
+  <!-- uses ui.bootstrap.typeahead -->
+  <input name="q" type="text" placeholder="Search" ng-model="c.searchTerm" autocomplete="off" uib-typeahead="item as item.primary for item in c.getResults($viewValue)" typeahead-wait-ms="250" typeahead-focus-first="false" typeahead-on-select="c.onSelect($item, $model, $label)" typeahead-template-url="sp-typeahead.html" typeahead-popup-template-url="sp-typeahead-popup.html" class="form-control input-typeahead ng-pristine ng-untouched ng-valid ng-empty" title="Search" role="textbox" aria-label="Search" tabindex="0" aria-haspopup="true" aria-autocomplete="list" aria-owns="typeahead-108-4917" data-aria-expanded="false" aria-invalid="false"><ul class="dropdown-menu ng-isolate-scope ng-hide" ng-show="isOpen() &amp;&amp; !moveInProgress" ng-style="{top: position().top+'px', left: position().left+'px'}" role="listbox" aria-hidden="true" uib-typeahead-popup="" id="typeahead-108-4917" matches="matches" active="activeIdx" select="select(activeIdx, evt)" move-in-progress="moveInProgress" query="query" position="position" assign-is-open="assignIsOpen(isOpen)" debounce="debounceUpdate" template-url="sp-typeahead.html" popup-template-url="sp-typeahead-popup.html">
+ <li role="option" aria-hidden="true" style="display: none"></li>
+ <!-- ngRepeat: match in matches track by $index -->
+</ul>
+  <span class="input-group-btn"> <button name="search" type="submit" class="btn btn-default" title="Search" aria-label="Search" role="button"> <!-- ngIf: ::c.options.glyph --><i ng-if="::c.options.glyph" class="fa fa-search"></i><!-- end ngIf: ::c.options.glyph --> </button> </span>
+ </div>
+</form></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --></div><!-- end ngRepeat: column in columns --></div></sp-page-row><!-- end ngRepeat: row in ::container.rows --></div></div><!-- end ngRepeat: container in containers --><div ng-repeat="container in containers" ng-style="main.parseJSON(container.background)" ng-class="::[container.class_name, 'c' + container.sys_id]" class="ng-scope homepage-quicklinks c9d142553d7333100a9ad1e173e24d414" style="background-size: initial; background-position: center center;"><div ng-class="::main.getContainerClasses(container)" class="container"><!-- ngIf: ::container.title --><h2 class="sr-only ng-binding ng-scope" ng-if="::container.title" ng-bind="::container.title">Quick Links</h2><!-- end ngIf: ::container.title --><!-- ngRepeat: row in ::container.rows --><sp-page-row ng-repeat="row in ::container.rows" columns="::row.columns" row="::row" container="::container" class="ng-scope ng-isolate-scope"><div class="sp-row-content  row"><!-- ngRepeat: column in columns --><div ng-repeat="column in columns" class=" col-sm-6 col-md-3 "><!-- ngRepeat: row in column.rows --><!-- ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="xf4c794b2cb20120000f8d856634c9cea" class="v3caa67afcb13020000f8d856634c9c2e ng-scope" data="data" options="options" widget="widget" server="server"><div class="iconlink">
+ <!--// Top Icon -->
+ <!-- ngIf: ::(options.link_template == 'Top Icon' || !options.link_template) -->
+ <!--// Circle Icon -->
+ <!-- ngIf: ::(options.link_template == 'Circle Icon') --><a ng-if="::(options.link_template == 'Circle Icon')" ng-href="?id=sc_home" class="circle_icon  text-info" target="" role="link" href="?id=sc_home"> <span class="fa fa-stack fa-2x"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-briefcase fa-stack-1x fa-inverse"></i> </span> <h2 class="ng-binding">Request Something</h2> <span class="text-muted ng-binding">Browse the catalog for services and items you need</span> </a><!-- end ngIf: ::(options.link_template == 'Circle Icon') -->
+ <!--// Color Box -->
+ <!-- ngIf: ::(options.link_template == 'Color Box') -->
+</div></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --></div><!-- end ngRepeat: column in columns --><div ng-repeat="column in columns" class=" col-sm-6 col-md-3 "><!-- ngRepeat: row in column.rows --><!-- ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="x61c794b2cb20120000f8d856634c9ced" class="v3caa67afcb13020000f8d856634c9c2e ng-scope" data="data" options="options" widget="widget" server="server"><div class="iconlink">
+ <!--// Top Icon -->
+ <!-- ngIf: ::(options.link_template == 'Top Icon' || !options.link_template) -->
+ <!--// Circle Icon -->
+ <!-- ngIf: ::(options.link_template == 'Circle Icon') --><a ng-if="::(options.link_template == 'Circle Icon')" ng-href="?id=kb_view2" class="circle_icon  text-success" target="" role="link" href="?id=kb_view2"> <span class="fa fa-stack fa-2x"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-book fa-stack-1x fa-inverse"></i> </span> <h2 class="ng-binding">Knowledge Base</h2> <span class="text-muted ng-binding">Browse and search for articles, rate or submit feedback</span> </a><!-- end ngIf: ::(options.link_template == 'Circle Icon') -->
+ <!--// Color Box -->
+ <!-- ngIf: ::(options.link_template == 'Color Box') -->
+</div></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --></div><!-- end ngRepeat: column in columns --><div ng-repeat="column in columns" class=" col-sm-6 col-md-3 "><!-- ngRepeat: row in column.rows --><!-- ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="x96c7d0b2cb20120000f8d856634c9c98" class="v3caa67afcb13020000f8d856634c9c2e ng-scope" data="data" options="options" widget="widget" server="server"><div class="iconlink">
+ <!--// Top Icon -->
+ <!-- ngIf: ::(options.link_template == 'Top Icon' || !options.link_template) -->
+ <!--// Circle Icon -->
+ <!-- ngIf: ::(options.link_template == 'Circle Icon') --><a ng-if="::(options.link_template == 'Circle Icon')" ng-href="?id=sc_category&amp;sys_id=e15706fc0a0a0aa7007fc21e1ab70c2f" class="circle_icon  text-warning" target="" role="link" href="?id=sc_category&amp;sys_id=e15706fc0a0a0aa7007fc21e1ab70c2f"> <span class="fa fa-stack fa-2x"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-child fa-stack-1x fa-inverse"></i> </span> <h2 class="ng-binding">Get Help</h2> <span class="text-muted ng-binding">Contact support to make a request, or report a problem</span> </a><!-- end ngIf: ::(options.link_template == 'Circle Icon') -->
+ <!--// Color Box -->
+ <!-- ngIf: ::(options.link_template == 'Color Box') -->
+</div></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --></div><!-- end ngRepeat: column in columns --><div ng-repeat="column in columns" class=" col-sm-6 col-md-3 "><!-- ngRepeat: row in column.rows --><!-- ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="xdbc794b2cb20120000f8d856634c9ccf" class="v3caa67afcb13020000f8d856634c9c2e ng-scope" data="data" options="options" widget="widget" server="server"><div class="iconlink">
+ <!--// Top Icon -->
+ <!-- ngIf: ::(options.link_template == 'Top Icon' || !options.link_template) -->
+ <!--// Circle Icon -->
+ <!-- ngIf: ::(options.link_template == 'Circle Icon') --><a ng-if="::(options.link_template == 'Circle Icon')" ng-href="?id=sqa_tagged_questions" class="circle_icon  text-danger" target="" role="link" href="?id=sqa_tagged_questions"> <span class="fa fa-stack fa-2x"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-comments fa-stack-1x fa-inverse"></i> </span> <h2 class="ng-binding">Community</h2> <span class="text-muted ng-binding">Community-sourced answers to your questions</span> </a><!-- end ngIf: ::(options.link_template == 'Circle Icon') -->
+ <!--// Color Box -->
+ <!-- ngIf: ::(options.link_template == 'Color Box') -->
+</div></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --></div><!-- end ngRepeat: column in columns --></div></sp-page-row><!-- end ngRepeat: row in ::container.rows --></div></div><!-- end ngRepeat: container in containers --><div ng-repeat="container in containers" ng-style="main.parseJSON(container.background)" ng-class="::[container.class_name, 'c' + container.sys_id]" class="ng-scope padding-top-lg ce3698ad6cb20020000f8d856634c9c42" style=""><div ng-class="::main.getContainerClasses(container)" class="container"><!-- ngIf: ::container.title --><!-- ngRepeat: row in ::container.rows --><sp-page-row ng-repeat="row in ::container.rows" columns="::row.columns" row="::row" container="::container" class="ng-scope ng-isolate-scope"><div class="sp-row-content  row"><!-- ngRepeat: column in columns --><div ng-repeat="column in columns" class=" col-sm-4 "><!-- ngRepeat: row in column.rows --><!-- ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="xc4759891d7101200a9addd173e24d4a9" class="v1e699082d7001200a9addd173e24d4e3 ng-scope" data="data" options="options" widget="widget" server="server"><!-- ngIf: !data.service || data.outages.length > 0 --><div ng-if="!data.service || data.outages.length > 0" class="panel panel-default b">
+ <div class="panel-heading">
+  <h2 class="panel-title">Current Status<!-- ngIf: data.serviceDisplay --></h2>
+ </div>
+ <div class="panel-body">
+  <!-- ngIf: !standalone && !data.service -->
+  <!-- ngIf: data.outages.length == 0 --><div ng-if="data.outages.length == 0" class="col-xs-12 bs-callout bs-callout-success ng-scope">
+   <!-- ngIf: !data.service --><div ng-if="!data.service" class="ng-scope">
+    No system is reporting an issue
+   </div><!-- end ngIf: !data.service -->
+  </div><!-- end ngIf: data.outages.length == 0 -->
+  <!-- ngRepeat: outage in data.outages -->
+  <!-- ngIf: ::standalone --><div ng-if="::standalone" class="ng-scope">
+   <a href="?id=services_status" aria-label="More information, open current status page" role="link">More information...</a>
+  </div><!-- end ngIf: ::standalone -->
+ </div>
+</div><!-- end ngIf: !data.service || data.outages.length > 0 --></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="x28e8e193d7333100a9ad1e173e24d459" class="vad2326a45b110200e23dc7ad31f91a1e ng-scope" data="data" options="options" widget="widget" server="server"><!-- ngIf: data.articles.length > 0 --></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="xc4692593d7333100a9ad1e173e24d430" class="v3c817b52cb30020000f8d856634c9cfb ng-scope" data="data" options="options" widget="widget" server="server"><!-- ngIf: ::(data.articles.length > 0) --><div class="panel panel-default b" ng-if="::(data.articles.length > 0)">
+ <div class="panel-heading">
+  <h2 class="h4 panel-title ng-binding" ng-bind="::options.title">Top Rated Articles</h2>
+ </div>
+ <div class="panel-body">
+  <ul class="list-group">
+   <!-- ngRepeat: a in ::data.articles --><li class="list-group-item ng-scope" ng-repeat="a in ::data.articles"> <a href="?id=kb_article&amp;sys_id=471ee81eff6002009b20ffffffffff34" class="ng-binding" role="link">Getting Around in Windows</a>
+    <div>
+     <span ng-mouseleave="reset()" ng-keydown="onKeydown($event)" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="5" aria-valuenow="5" uib-rating="" ng-model="::a.rating" max="5" readonly="readonly" aria-label="Article rating - Read Only" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" aria-invalid="false">
+    <!-- ngRepeat: r in range track by $index --><span ng-repeat-start="r in range track by $index" class="sr-only ng-binding ng-scope">(*)</span>
+    <i ng-repeat-end="" role="checkbox" ng-mouseenter="enter($index + 1)" ng-click="rate($index + 1)" class="glyphicon ng-scope glyphicon-star" ng-class="$index < value &amp;&amp; (r.stateOn || 'glyphicon-star') || (r.stateOff || 'glyphicon-star-empty')" ng-attr-title="{{r.title}}" aria-checked="true" value="1" title="1"></i><!-- end ngRepeat: r in range track by $index --><span ng-repeat-start="r in range track by $index" class="sr-only ng-binding ng-scope">(*)</span>
+    <i ng-repeat-end="" role="checkbox" ng-mouseenter="enter($index + 1)" ng-click="rate($index + 1)" class="glyphicon ng-scope glyphicon-star" ng-class="$index < value &amp;&amp; (r.stateOn || 'glyphicon-star') || (r.stateOff || 'glyphicon-star-empty')" ng-attr-title="{{r.title}}" aria-checked="true" value="2" title="2"></i><!-- end ngRepeat: r in range track by $index --><span ng-repeat-start="r in range track by $index" class="sr-only ng-binding ng-scope">(*)</span>
+    <i ng-repeat-end="" role="checkbox" ng-mouseenter="enter($index + 1)" ng-click="rate($index + 1)" class="glyphicon ng-scope glyphicon-star" ng-class="$index < value &amp;&amp; (r.stateOn || 'glyphicon-star') || (r.stateOff || 'glyphicon-star-empty')" ng-attr-title="{{r.title}}" aria-checked="true" value="3" title="3"></i><!-- end ngRepeat: r in range track by $index --><span ng-repeat-start="r in range track by $index" class="sr-only ng-binding ng-scope">(*)</span>
+    <i ng-repeat-end="" role="checkbox" ng-mouseenter="enter($index + 1)" ng-click="rate($index + 1)" class="glyphicon ng-scope glyphicon-star" ng-class="$index < value &amp;&amp; (r.stateOn || 'glyphicon-star') || (r.stateOff || 'glyphicon-star-empty')" ng-attr-title="{{r.title}}" aria-checked="true" value="4" title="4"></i><!-- end ngRepeat: r in range track by $index --><span ng-repeat-start="r in range track by $index" class="sr-only ng-binding ng-scope">(*)</span>
+    <i ng-repeat-end="" role="checkbox" ng-mouseenter="enter($index + 1)" ng-click="rate($index + 1)" class="glyphicon ng-scope glyphicon-star" ng-class="$index < value &amp;&amp; (r.stateOn || 'glyphicon-star') || (r.stateOff || 'glyphicon-star-empty')" ng-attr-title="{{r.title}}" aria-checked="true" value="5" title="5"></i><!-- end ngRepeat: r in range track by $index -->
+</span>
+    </div> </li><!-- end ngRepeat: a in ::data.articles -->
+  </ul>
+ </div>
+</div><!-- end ngIf: ::(data.articles.length > 0) --></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --></div><!-- end ngRepeat: column in columns --><div ng-repeat="column in columns" class=" col-sm-4 "><!-- ngRepeat: row in column.rows --><!-- ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="x8ce5ab42d730120023c84f80de610309" class="v2685ab42d730120023c84f80de6103a0 ng-scope" data="data" options="options" widget="widget" server="server"><!-- ngIf: c.data.questions.length > 0 --></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="xb7e1b7d1d721120023c84f80de6103cd" class="ve0c3a791d721120023c84f80de610304 ng-scope" data="data" options="options" widget="widget" server="server"><div class="panel panel-default b">
+ <div class="panel-heading">
+  <h2 class="h4 panel-title">Popular Questions</h2>
+ </div>
+ <!-- ngIf: ::(c.data.questions.length == 0) --><div ng-if="::(c.data.questions.length == 0)" class="empty-state-content panel-body ng-scope">
+  <p>No questions have been asked yet</p>
+  <!-- ngIf: !data.userIsGuest --><a ng-if="!data.userIsGuest" href="?id=sqanda_new_question" class="btn btn-default btn-block ng-scope" role="link">Ask a Question</a><!-- end ngIf: !data.userIsGuest -->
+ </div><!-- end ngIf: ::(c.data.questions.length == 0) -->
+ <!-- ngIf: ::(c.data.questions.length > 0) -->
+ <!-- ngIf: ::(c.data.totalQuestionCount > c.data.questions.length) -->
+</div></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="x9bdbdcd3e773320075c2a117c2f6a935" class="v94c300c7e777320075c2a117c2f6a9e7 ng-scope" data="data" options="options" widget="widget" server="server"><div ng-class="['panel', 'panel-default', 'b', 'spw-announcements-root', 'spw-announcements-1544542778912', {'accessibility-off': c.accessibilityOff}]" class="panel panel-default b spw-announcements-root spw-announcements-1544542778912 accessibility-off" style="">
+ <div class="panel-heading">
+  <h2 class="h4 panel-title ng-binding" aria-label="Announcements"><!-- ngIf: c.options.glyph --><span ng-if="c.options.glyph" aria-label="empty glyph" class="ng-scope" style="">
+    <span class="fa fa-empty" aria-hidden="true" name="empty"></span></span><!-- end ngIf: c.options.glyph -->Announcements</h2>
+ </div>
+ <!-- ngIf: ::(c.totalAnnouncements > 0) -->
+ <!-- ngIf: ::(c.totalAnnouncements === 0) --><div ng-if="::(c.totalAnnouncements === 0)" class="empty-state-content panel-body ng-scope" style="">
+  <p>No information available</p>
+ </div><!-- end ngIf: ::(c.totalAnnouncements === 0) -->
+ <!-- ngIf: c.totalPages > 1 -->
+</div></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --></div><!-- end ngRepeat: column in columns --><div ng-repeat="column in columns" class=" col-sm-4 "><!-- ngRepeat: row in column.rows --><!-- ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="xf433cc37cb01120000f8d856634c9c88" class="v6506d341cb33020000f8d856634c9cdc ng-scope" data="data" options="options" widget="widget" server="server"><!-- ngIf: !data.is_logged_in --></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="x7119e193d7333100a9ad1e173e24d4cb" class="vf37aa302cb70020000f8d856634c9cfc ng-scope" data="data" options="options" widget="widget" server="server"><div class="panel panel-default b">
+ <div class="panel-heading">
+  <h2 class="h4 panel-title">
+   <!-- ngIf: ::options.glyph.length -->My Approvals <!-- ngIf: data.pagination.showPagination && (data.pagination.from <= data.pagination.to) --></h2>
+ </div>
+ <div class="panel-body" ng-class="{'padder-b-none': data.approvals.length != 0}">
+  <!-- ngIf: data.approvals.length == 0 && data.pagination.of == 0 --><div ng-if="data.approvals.length == 0 &amp;&amp; data.pagination.of == 0" class="ng-scope">
+    You have no pending approvals
+  </div><!-- end ngIf: data.approvals.length == 0 && data.pagination.of == 0 -->
+  <!-- ngIf: data.approvals.length == 0 && data.pagination.of != 0 -->
+  <!-- ngRepeat: approval in data.approvals -->
+  <!-- body -->
+ </div>
+ <!-- ngIf: data.pagination.showPagination -->
+</div></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="x4c3540f147330200ba13a5554ee49012" class="v5b255672cb03020000f8d856634c9c28 ng-scope" data="data" options="options" widget="widget" server="server"><!-- ngIf: c.data.isValid && (c.options.always_show || c.data.filterText || c.data.list.length) --><div class="panel panel-default b" ng-if="c.data.isValid &amp;&amp; (c.options.always_show || c.data.filterText || c.data.list.length)">
+ <!-- ngIf: ::!c.options.hide_header --><div class="panel-heading ng-scope" ng-if="::!c.options.hide_header">
+  <h2 class="h4 panel-title ng-binding"> <!-- ngIf: c.options.glyph -->My Open Incidents</h2>
+  <!-- <i class="fa fa-filter" ng-click="c.toggleFilter()" ng-class="{'disabled-filter': !c.showFilter}"></i> -->
+  <div ng-show="c.showFilter" aria-hidden="true" class="ng-hide">
+   <input aria-label="Filter" ng-model="c.data.filterText" ng-model-options="{debounce: 300}" sn-focus="c.showFilter" placeholder="Filter..." ng-change="c.update()" class="form-control input-sm filter-box ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false">
+  </div>
+ </div><!-- end ngIf: ::!c.options.hide_header -->
+ <ul class="list-group hide-x-overflow" style="max-height: none; overflow-y: auto;">
+  <!-- ngRepeat: item in c.data.list track by item.sys_id --><!-- ngIf: c.data.list.length > 0 --><li ng-if="c.data.list.length > 0" ng-repeat="item in c.data.list track by item.sys_id" class="list-group-item ng-scope"> <a ng-click="c.onClick($event, item, item.url, {})" href="javascript:void(0)" role="link"> <!-- ngRepeat: action in c.data.actions --> <!-- ngIf: c.options.image_field -->
+    <div>
+     <div ng-switch="" on="item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}">
+      <!-- ngSwitchWhen: translated_html -->
+      <!-- ngSwitchDefault: --><div ng-switch-default="" class="ng-binding ng-scope">
+       Rain is leaking on main DNS Server
+      </div><!-- end ngSwitchWhen: -->
+     </div>
+     <!-- ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --> <span ng-switch="f.type" title="Number"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --> <!-- ngSwitchDefault: --><span ng-switch-default="" class="ng-binding ng-scope">INC0000016</span><!-- end ngSwitchWhen: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope"> • </span><!-- end ngIf: !$first --> <span ng-switch="f.type" title="Updated"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --><span ng-switch-when="glide_date_time" class="ng-scope">
+        <sn-time-ago timestamp="::f.value" class="ng-isolate-scope"><time title="01/03/2018, 19:51:23" class="ng-binding">9mo ago</time></sn-time-ago></span><!-- end ngSwitchWhen: --> <!-- ngSwitchDefault: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields -->
+    </div> </a> </li><!-- end ngIf: c.data.list.length > 0 --><!-- end ngRepeat: item in c.data.list track by item.sys_id --><!-- ngIf: c.data.list.length > 0 --><li ng-if="c.data.list.length > 0" ng-repeat="item in c.data.list track by item.sys_id" class="list-group-item ng-scope"> <a ng-click="c.onClick($event, item, item.url, {})" href="javascript:void(0)" role="link"> <!-- ngRepeat: action in c.data.actions --> <!-- ngIf: c.options.image_field -->
+    <div>
+     <div ng-switch="" on="item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}">
+      <!-- ngSwitchWhen: translated_html -->
+      <!-- ngSwitchDefault: --><div ng-switch-default="" class="ng-binding ng-scope">
+       JavaScript error on hiring page of corporate website
+      </div><!-- end ngSwitchWhen: -->
+     </div>
+     <!-- ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --> <span ng-switch="f.type" title="Number"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --> <!-- ngSwitchDefault: --><span ng-switch-default="" class="ng-binding ng-scope">INC0000040</span><!-- end ngSwitchWhen: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope"> • </span><!-- end ngIf: !$first --> <span ng-switch="f.type" title="Updated"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --><span ng-switch-when="glide_date_time" class="ng-scope">
+        <sn-time-ago timestamp="::f.value" class="ng-isolate-scope"><time title="01/03/2018, 19:46:30" class="ng-binding">9mo ago</time></sn-time-ago></span><!-- end ngSwitchWhen: --> <!-- ngSwitchDefault: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields -->
+    </div> </a> </li><!-- end ngIf: c.data.list.length > 0 --><!-- end ngRepeat: item in c.data.list track by item.sys_id --><!-- ngIf: c.data.list.length > 0 --><li ng-if="c.data.list.length > 0" ng-repeat="item in c.data.list track by item.sys_id" class="list-group-item ng-scope"> <a ng-click="c.onClick($event, item, item.url, {})" href="javascript:void(0)" role="link"> <!-- ngRepeat: action in c.data.actions --> <!-- ngIf: c.options.image_field -->
+    <div>
+     <div ng-switch="" on="item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}">
+      <!-- ngSwitchWhen: translated_html -->
+      <!-- ngSwitchDefault: --><div ng-switch-default="" class="ng-binding ng-scope">
+       Can't launch 64-bit Windows 7 virtual machine
+      </div><!-- end ngSwitchWhen: -->
+     </div>
+     <!-- ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --> <span ng-switch="f.type" title="Number"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --> <!-- ngSwitchDefault: --><span ng-switch-default="" class="ng-binding ng-scope">INC0000019</span><!-- end ngSwitchWhen: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope"> • </span><!-- end ngIf: !$first --> <span ng-switch="f.type" title="Updated"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --><span ng-switch-when="glide_date_time" class="ng-scope">
+        <sn-time-ago timestamp="::f.value" class="ng-isolate-scope"><time title="01/03/2018, 19:46:13" class="ng-binding">9mo ago</time></sn-time-ago></span><!-- end ngSwitchWhen: --> <!-- ngSwitchDefault: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields -->
+    </div> </a> </li><!-- end ngIf: c.data.list.length > 0 --><!-- end ngRepeat: item in c.data.list track by item.sys_id --><!-- ngIf: c.data.list.length > 0 --><li ng-if="c.data.list.length > 0" ng-repeat="item in c.data.list track by item.sys_id" class="list-group-item ng-scope"> <a ng-click="c.onClick($event, item, item.url, {})" href="javascript:void(0)" role="link"> <!-- ngRepeat: action in c.data.actions --> <!-- ngIf: c.options.image_field -->
+    <div>
+     <div ng-switch="" on="item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}">
+      <!-- ngSwitchWhen: translated_html -->
+      <!-- ngSwitchDefault: --><div ng-switch-default="" class="ng-binding ng-scope">
+       Sales forecast spreadsheet is READ ONLY
+      </div><!-- end ngSwitchWhen: -->
+     </div>
+     <!-- ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --> <span ng-switch="f.type" title="Number"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --> <!-- ngSwitchDefault: --><span ng-switch-default="" class="ng-binding ng-scope">INC0000018</span><!-- end ngSwitchWhen: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope"> • </span><!-- end ngIf: !$first --> <span ng-switch="f.type" title="Updated"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --><span ng-switch-when="glide_date_time" class="ng-scope">
+        <sn-time-ago timestamp="::f.value" class="ng-isolate-scope"><time title="01/03/2018, 19:37:49" class="ng-binding">9mo ago</time></sn-time-ago></span><!-- end ngSwitchWhen: --> <!-- ngSwitchDefault: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields -->
+    </div> </a> </li><!-- end ngIf: c.data.list.length > 0 --><!-- end ngRepeat: item in c.data.list track by item.sys_id --><!-- ngIf: c.data.list.length > 0 --><li ng-if="c.data.list.length > 0" ng-repeat="item in c.data.list track by item.sys_id" class="list-group-item ng-scope"> <a ng-click="c.onClick($event, item, item.url, {})" href="javascript:void(0)" role="link"> <!-- ngRepeat: action in c.data.actions --> <!-- ngIf: c.options.image_field -->
+    <div>
+     <div ng-switch="" on="item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}">
+      <!-- ngSwitchWhen: translated_html -->
+      <!-- ngSwitchDefault: --><div ng-switch-default="" class="ng-binding ng-scope">
+       Performance problems with email
+      </div><!-- end ngSwitchWhen: -->
+     </div>
+     <!-- ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --> <span ng-switch="f.type" title="Number"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --> <!-- ngSwitchDefault: --><span ng-switch-default="" class="ng-binding ng-scope">INC0000058</span><!-- end ngSwitchWhen: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope"> • </span><!-- end ngIf: !$first --> <span ng-switch="f.type" title="Updated"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --><span ng-switch-when="glide_date_time" class="ng-scope">
+        <sn-time-ago timestamp="::f.value" class="ng-isolate-scope"><time title="10/08/2016, 17:37:45" class="ng-binding">2y ago</time></sn-time-ago></span><!-- end ngSwitchWhen: --> <!-- ngSwitchDefault: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields -->
+    </div> </a> </li><!-- end ngIf: c.data.list.length > 0 --><!-- end ngRepeat: item in c.data.list track by item.sys_id --><!-- ngIf: c.data.list.length > 0 --><li ng-if="c.data.list.length > 0" ng-repeat="item in c.data.list track by item.sys_id" class="list-group-item ng-scope"> <a ng-click="c.onClick($event, item, item.url, {})" href="javascript:void(0)" role="link"> <!-- ngRepeat: action in c.data.actions --> <!-- ngIf: c.options.image_field -->
+    <div>
+     <div ng-switch="" on="item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}">
+      <!-- ngSwitchWhen: translated_html -->
+      <!-- ngSwitchDefault: --><div ng-switch-default="" class="ng-binding ng-scope">
+       Performance problems with wifi
+      </div><!-- end ngSwitchWhen: -->
+     </div>
+     <!-- ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --> <span ng-switch="f.type" title="Number"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --> <!-- ngSwitchDefault: --><span ng-switch-default="" class="ng-binding ng-scope">INC0000057</span><!-- end ngSwitchWhen: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope"> • </span><!-- end ngIf: !$first --> <span ng-switch="f.type" title="Updated"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --><span ng-switch-when="glide_date_time" class="ng-scope">
+        <sn-time-ago timestamp="::f.value" class="ng-isolate-scope"><time title="10/08/2016, 17:14:59" class="ng-binding">2y ago</time></sn-time-ago></span><!-- end ngSwitchWhen: --> <!-- ngSwitchDefault: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields -->
+    </div> </a> </li><!-- end ngIf: c.data.list.length > 0 --><!-- end ngRepeat: item in c.data.list track by item.sys_id --><!-- ngIf: c.data.list.length > 0 --><li ng-if="c.data.list.length > 0" ng-repeat="item in c.data.list track by item.sys_id" class="list-group-item ng-scope"> <a ng-click="c.onClick($event, item, item.url, {})" href="javascript:void(0)" role="link"> <!-- ngRepeat: action in c.data.actions --> <!-- ngIf: c.options.image_field -->
+    <div>
+     <div ng-switch="" on="item.display_field.type" ng-class="{'l-h-40': !item.secondary_fields.length}">
+      <!-- ngSwitchWhen: translated_html -->
+      <!-- ngSwitchDefault: --><div ng-switch-default="" class="ng-binding ng-scope">
+       Unable to access team file share
+      </div><!-- end ngSwitchWhen: -->
+     </div>
+     <!-- ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --> <span ng-switch="f.type" title="Number"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --> <!-- ngSwitchDefault: --><span ng-switch-default="" class="ng-binding ng-scope">INC0000059</span><!-- end ngSwitchWhen: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields --><small class="text-muted ng-scope" ng-repeat="f in item.secondary_fields" aria-live="polite"> <!-- ngIf: !$first --><span ng-if="!$first" class="ng-scope"> • </span><!-- end ngIf: !$first --> <span ng-switch="f.type" title="Updated"> <!-- ngSwitchWhen: glide_date --> <!-- ngSwitchWhen: glide_date_time --><span ng-switch-when="glide_date_time" class="ng-scope">
+        <sn-time-ago timestamp="::f.value" class="ng-isolate-scope"><time title="10/08/2016, 17:14:29" class="ng-binding">2y ago</time></sn-time-ago></span><!-- end ngSwitchWhen: --> <!-- ngSwitchDefault: --> </span> </small><!-- end ngRepeat: f in item.secondary_fields -->
+    </div> </a> </li><!-- end ngIf: c.data.list.length > 0 --><!-- end ngRepeat: item in c.data.list track by item.sys_id -->
+  <!-- ngIf: !c.data.list.length -->
+ </ul>
+ <!-- ngIf: !c.options.hide_footer && c.options.maximum_entries && c.data.count > c.options.maximum_entries -->
+</div><!-- end ngIf: c.data.isValid && (c.options.always_show || c.data.filterText || c.data.list.length) --></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="x795068f147330200ba13a5554ee4903b" class="v5b255672cb03020000f8d856634c9c28 ng-scope" data="data" options="options" widget="widget" server="server"><!-- ngIf: c.data.isValid && (c.options.always_show || c.data.filterText || c.data.list.length) --></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --></div><!-- end ngRepeat: column in columns --></div></sp-page-row><!-- end ngRepeat: row in ::container.rows --><sp-page-row ng-repeat="row in ::container.rows" columns="::row.columns" row="::row" container="::container" class="ng-scope ng-isolate-scope"><div class="sp-row-content  row"><!-- ngRepeat: column in columns --><div ng-repeat="column in columns" class=" col-md-12 "><!-- ngRepeat: row in column.rows --><!-- ngRepeat: rectangle in column.widgets --><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug" class="ng-scope"><div id="xb072f1900b0103002600425663673a10" class="v9cfd91940b4103002600425663673a31 ng-scope" data="data" options="options" widget="widget" server="server" style="display: none;"><div>
+ <button name="gotoTop" ng-click="goTop()" class="visible-xs visible-sm btn fa fa-arrow-up fa-lg padder-lg button-to-top pull-right" role="button"></button>
+</div></div><!-- ngIf: rectangle.debugModal --></span><!-- end ngRepeat: rectangle in column.widgets --></div><!-- end ngRepeat: column in columns --></div></sp-page-row><!-- end ngRepeat: row in ::container.rows --></div></div><!-- end ngRepeat: container in containers --></main><!-- ngIf: theme.footer && !theme.footer_fixed --><footer ng-if="theme.footer &amp;&amp; !theme.footer_fixed" class="ng-scope" role="contentinfo" style=""><sp-widget widget="theme.footer" class="ng-isolate-scope"></sp-widget></footer><!-- end ngIf: theme.footer && !theme.footer_fixed --></section><!-- ngIf: theme.footer && theme.footer_fixed --><sp-aria-live><div class="sr-only ng-binding" aria-live="assertive"></div></sp-aria-live></div><script id="sp_image_chooser.xml" type="text/ng-template"><div class="sp-image-chooser-div"><input id="imageChooser{{ field.name }}" type="file" style="display: none;" ng-file-select="fileSelect($files, field)"></input><img ng-show="field.value" style="max-height: 200px; max-width: 200px;" ng-src="{{ field.value }}"></img><span ng-show="disabled() &amp;&amp; !field.value">No image</span><span ng-show="!disabled()"><a ng-show="!field.value" style="margin: 5px;" class="btn btn-default" ng-click="clickChoose()">Choose</a><a ng-show="field.value" style="margin: 5px;" class="btn btn-default" ng-click="clickChoose()">Change</a><a ng-show="field.value" style="margin: 5px;" class="btn btn-default" ng-click="clickClear()">Remove</a></span></div></script><script id="sp_dialog.xml" type="text/ng-template"><span><div sn-dialog="true" disable-auto-focus="true" name="{{name}}" modal="true" role="dialog" aria-labelledby="dialog-title" context="parms" class="sp-message-dialog {{ dialogClass }}"><div class="sp-message-dialog-title" id="dialog-title"><div class="sp-message-dialog-title-inner">{{title}}</div></div><div class="sp-message-dialog-content "><div class="sp-message-dialog-content-block">{{message}}</div><div class="sp-message-dialog-content-block" ng-if="parms.details">{{parms.details}}</div><div class="sp-message-dialog-content-block" ng-if="question">{{question}}</div><div class="sp-message-dialog-content-block" ng-if="checkboxMessage"><div style="float: left"><input type="checkbox" ng-model="checkboxModel.value" style="box-shadow: none; margin-left: 12px; width: auto; display: block; margin-top:3px; margin-right: 4px;" ng-change="update()"></input></div><div style="float: left">{{checkboxMessage}}</div></div></div><div class="sp-message-dialog-buttons"><button class="btn btn-cancel" title="{{cancel}}" ng-click="parms.cancel()" style="margin-right: 5px !important;" ng-if="cancel">{{cancel}}</button><button class="btn btn-primary" title="{{ok}}" ng-click="parms.ok()" style="margin-left: 5px !important;" ng-if="ok">{{ok}}</button></div></div></span></script><script id="sp_page_row" type="text/ng-template"><div class="sp-row-content {{::row.class_name}} {{(!container.bootstrap_alt) ? 'row' : ''}}"><div ng-repeat="column in columns" class="{{::column.class_name}} {{(!container.bootstrap_alt) ? column.size_classes : ''}}"><div ng-repeat="row in column.rows" class="repeated-row-container"><sp-page-row columns="row.columns" row="row" container="container"></sp-page-row></div><span ng-repeat="rectangle in column.widgets" sp-context-menu="contextMenu(event)" ng-controller="spWidgetDebug"><sp-widget widget="rectangle.widget"></sp-widget><sp-widget widget="rectangle.debugModal" ng-if="rectangle.debugModal"></sp-widget></span></div></div></script><script id="sp_form_field.xml" type="text/ng-template"><div class="form-group" ng-class="{'form-group-has-focus': hasValueOrFocus()}"><label class="field-label" ng-if="::c.showLabel(field)" for="sp_formfield_{{::field.name}}" title="{{::field.hint}}" tooltip-right="true"><span class="field-decorations"><span ng-show="field.isMandatory()" class="fa fa-asterisk mandatory" ng-class="{'mandatory-filled': field.mandatory_filled()}" title="Mandatory" style="padding-right: .25em" aria-label="{{field.mandatory_filled()? 'Mandatory Filled ' : 'Mandatory '}}"></span><span ng-repeat="decoration in field.decorations" class="decoration {{decoration.icon}}" title="{{decoration.text}}"></span></span>{{field.label}}<span class="sr-only">{{::field.hint}}</span></label><label ng-if="::field.type == 'reference'" class="sr-only" id="sp_reference_element_sr_{{::field.name}}">{{getReferenceLabelContents(field)}}</label><span class="type-{{::field.type}} field-actual" ng-switch="::field.type" ng-class="{'state-mandatory': field.mandatory, 'state-readonly': field.read_only, 'state-hidden': field.hidden}"><span ng-if="::field.instructions" ng-bind-html="::trustedHTML(field.instructions)"></span><span ng-switch-when="boolean"><label title="{{::field.hint}}" tooltip-right="true"><input type="checkbox" name="{{::field.name}}" ng-model="fieldValue" ng-true-value="'true'" ng-false-value="'false'" ng-model-options="{getterSetter: true}" ng-disabled="field.isReadonly()"></input><span style="margin-left: 1em;">{{field.label}}</span></label><span class="sr-only">{{::field.hint}}</span><span ng-if="::field._pricing">{{getCheckBoxPrice(field)}}</span></span><sp-choice-list ng-switch-when="choice" field="field" glide-form="getGlideForm()" options="field.choices" ng-init="setPriceLabelForChoice(field)"></sp-choice-list><span ng-switch-when="boolean_confirm"><span class="fa fa-asterisk mandatory" ng-class="{'mandatory-filled': field.mandatory_filled()}" title="Mandatory" style="padding-right: .25em"></span><label title="{{::field.hint}}" tooltip-right="true"><input type="checkbox" name="{{::field.name}}" ng-model="fieldValue" ng-true-value="'true'" ng-false-value="'false'" ng-model-options="{getterSetter: true}" ng-disabled="field.isReadonly()"></input><span style="margin-left: 1em;"><span class="sr-only" ng-show="!field.mandatory_filled()">Mandatory -</span><span class="sr-only" ng-show="field.mandatory_filled()">Mandatory Filled -</span>{{field.label}}</span></label><span class="sr-only">{{::field.hint}}</span><span ng-if="::field._pricing">{{getCheckBoxPrice(field)}}</span></span><sp-color-picker ng-switch-when="color" field="field" glide-form="getGlideForm()" sn-change="fieldValue(newValue)" sn-disabled="field.isReadonly()" ng-if="c.depsLoaded"></sp-color-picker><sp-css-editor ng-switch-when="css" class="form-control" field="field" id="sp_formfield_{{::field.name}}" data-length="4000" sn-disabled="field.isReadonly()" sn-change="stagedValueChange()" sn-blur="fieldValue(field.stagedValue)" glide-form="getGlideForm()" ng-if="c.depsLoaded"></sp-css-editor><span ng-switch-when="document_id" class="padder">{{field.displayValue}}</span><span ng-switch-when="domain_id" class="padder">{{field.displayValue}}</span><sp-duration-element ng-switch-when="glide_duration" field="field" ng-model="fieldValue" ng-model-options="{getterSetter: true}"></sp-duration-element><sp-email-element ng-switch-when="email" field="field" glide-form="getGlideForm()"></sp-email-element><input ng-switch-when="url" name="{{::field.name}}" id="sp_formfield_{{::field.name}}" autocomplete="off" class="form-control" ng-model="field.stagedValue" ng-model-options="{allowInvalid: true}" ng-change="stagedValueChange()" placeholder="{{::field.placeholder}}" ng-disabled="field.isReadonly()" maxlength="{{::field.max_length}}" data-type="{{::field.type}}"></input><sn-field-reference ng-switch-when="field_name" field="field" id="sp_formfield_{{::field.name}}" glide-form="getGlideForm()" sn-change="fieldValue(newValue)" sn-disabled="field.isReadonly()"></sn-field-reference><sn-field-list-element ng-switch-when="field_list" field="field" glide-form="getGlideForm()" sn-disabled="field.isReadonly()" sn-change="fieldValue(newValue, displayValue)"></sn-field-list-element><sp-date-picker ng-switch-when="glide_date" field="field" sn-disabled="field.isReadonly()" ng-model="fieldValue" ng-model-options="{getterSetter: true}" ng-if="c.depsLoaded"></sp-date-picker><sp-date-picker ng-switch-when="glide_date_time" field="field" sn-disabled="field.isReadonly()" ng-model="fieldValue" ng-model-options="{getterSetter: true}" sn-include-time="true" ng-if="c.depsLoaded"></sp-date-picker><sp-reference-element ng-switch-when="glide_list" field="field" sn-select-width="100%" ref-table="::formModel.table" ref-id="formModel.sys_id" glide-form="getGlideForm()" record-values="getEncodedRecordValues()" sn-options="{multiple: true, placeholder: field.placeholder}" sn-disabled="field.isReadonly()"></sp-reference-element><sp-glyph-picker ng-switch-when="glyphicon" field="field" sn-disabled="field.isReadonly()"></sp-glyph-picker><sp-html-editor ng-switch-when="xml" field="field" id="sp_formfield_{{::field.name}}" class="form-control" data-length="4000" sn-disabled="field.isReadonly()" sn-change="stagedValueChange()" sn-blur="fieldValue(field.stagedValue)" glide-form="getGlideForm()" ng-if="c.depsLoaded"></sp-html-editor><sp-html-editor ng-switch-when="html_template" class="form-control" field="field" id="sp_formfield_{{::field.name}}" data-length="4000" sn-disabled="field.isReadonly()" sn-change="stagedValueChange()" sn-blur="fieldValue(field.stagedValue)" glide-form="getGlideForm()" ng-if="c.depsLoaded"></sp-html-editor><sp-script-editor ng-switch-when="json" class="form-control" field="field" id="sp_formfield_{{::field.name}}" data-length="4000" sn-disabled="field.isReadonly()" sn-change="stagedValueChange()" sn-blur="fieldValue(field.stagedValue)" glide-form="getGlideForm()" ng-if="c.depsLoaded"></sp-script-editor><sp-mask-element ng-switch-when="masked"></sp-mask-element><sp-radio-option ng-switch-when="multiple_choice" glide-form="getGlideForm()" field="field" ng-init="setPriceLabelForChoice(field)"></sp-radio-option><sp-textarea ng-switch-when="multi_two_lines" field="field" name="{{::field.name}}" id="sp_formfield_{{::field.name}}" class="form-control" ng-model="field.stagedValue" ng-change="stagedValueChange()" data-type="{{::field.type}}" ng-readonly="field.isReadonly()"></sp-textarea><fieldset ng-switch-when="numericscale" class="radio"><legend class="sr-only"><span ng-show="field.isMandatory() &amp;&amp; !field.mandatory_filled()">Mandatory -</span><span ng-show="field.isMandatory() &amp;&amp; field.mandatory_filled()">Mandatory filled -</span>{{::field.label}}</legend><label tabindex="-1" ng-repeat="c in field.choices"><input type="radio" name="{{::field.name}}" value="{{c.value}}" ng-model="fieldValue" ng-model-options="{getterSetter: true}" ng-checked="field.value == c.value" ng-disabled="field.isReadonly()"></input><span style="margin-right: 1rem;">{{c.label}}</span></label></fieldset><sp-currency-element ng-switch-when="price" field="field" sn-disabled="field.isReadonly()" sn-change="stagedValueChange()" sn-blur="fieldValue(field.stagedValue)" glide-form="getGlideForm()"></sp-currency-element><sp-currency-element ng-switch-when="currency" field="field" sn-disabled="field.isReadonly()" sn-change="stagedValueChange()" sn-blur="fieldValue(field.stagedValue)" glide-form="getGlideForm()"></sp-currency-element><input ng-switch-when="password" type="password" name="{{::field.name}}" id="sp_formfield_{{::field.name}}" autocomplete="off" class="form-control" ng-model="field.stagedValue" ng-change="stagedValueChange()" ng-disabled="field.isReadonly()"></input><input ng-switch-when="password2" type="password" name="{{::field.name}}" id="sp_formfield_{{::field.name}}" autocomplete="off" class="form-control" ng-model="field.stagedValue" ng-change="stagedValueChange()" ng-disabled="field.isReadonly()"></input><sp-code-mirror ng-switch-when="properties" class="form-control" mode="properties" field="field" id="sp_formfield_{{::field.name}}" data-length="4000" sn-disabled="field.isReadonly()" sn-change="stagedValueChange()" sn-blur="fieldValue(field.stagedValue)" glide-form="getGlideForm()" ng-if="c.depsLoaded"></sp-code-mirror><sp-reference-field ng-switch-when="reference" ng-class="{'field-has-reference': field.value != '', 'field-empty-reference': field.value == ''}"></sp-reference-field><sp-script-editor ng-switch-when="script_server" class="form-control" field="field" id="sp_formfield_{{::field.name}}" data-length="4000" sn-disabled="field.isReadonly()" sn-change="stagedValueChange()" sn-blur="fieldValue(field.stagedValue)" glide-form="getGlideForm()" ng-if="c.depsLoaded"></sp-script-editor><sp-script-editor ng-switch-when="script" class="form-control" field="field" id="sp_formfield_{{::field.name}}" data-length="4000" sn-disabled="field.isReadonly()" sn-change="stagedValueChange()" sn-blur="fieldValue(field.stagedValue)" glide-form="getGlideForm()" ng-if="c.depsLoaded"></sp-script-editor><sn-table-reference ng-switch-when="table_name" field="field" id="sp_formfield_{{::field.name}}" sn-change="fieldValue(newValue)" sn-disabled="field.isReadonly()"></sn-table-reference><sp-textarea ng-switch-when="textarea" field="field" name="{{::field.name}}" id="sp_formfield_{{::field.name}}" class="form-control" ng-model="field.stagedValue" ng-change="stagedValueChange()" data-type="{{::field.type}}" ng-readonly="field.isReadonly()"></sp-textarea><sp-tinymce-editor ng-switch-when="html" name="{{::field.name}}" ng-model="field.stagedValue" ng-model-options="{getterSetter: true}" sn-blur="fieldValue(field.stagedValue)" field="field" glide-form="getGlideForm()" ng-change="stagedValueChange()" attachment-guid="c.getAttachmentGuid()"></sp-tinymce-editor><sp-tinymce-editor ng-switch-when="translated_html" name="{{::field.name}}" ng-model="field.stagedValue" sn-blur="fieldValue(field.stagedValue)" ng-model-options="{getterSetter: true}" field="field" glide-form="getGlideForm()" ng-change="stagedValueChange()" attachment-guid="c.getAttachmentGuid()"></sp-tinymce-editor><span ng-switch-when="user_image"><img ng-if="field.displayValue" ng-src="{{field.displayValue}}" style="max-height: 128px; max-width: 128px;"></img><sn-image-uploader ng-if="!field.isReadonly()" table-name="{{formModel.table}}" sys-id="{{formModel._attachmentGUID || formModel.sys_id}}" field-name="{{::field.name}}" read-only="field.isReadonly()" on-upload="onImageUpload(thumbnail)" on-delete="onImageDelete()" upload-message="{{field.isMandatory() &amp;&amp; !field.mandatory_filled() ? 'Mandatory -' : ''}} Upload an image" src="field.displayValue"></sn-image-uploader></span><sp-widget ng-switch-when="widget" widget="field.widget" page="{g_form: getGlideForm(), field: field, fieldValue: fieldValue}"></sp-widget><sp-widget ng-switch-when="widget_value" widget="field.widget" page="{g_form: getGlideForm(), field: field, fieldValue: fieldValue}"></sp-widget><span ng-switch-default="true"><input ng-if="::!field.max_length || 256 &gt; field.max_length || field._force_single_line" name="{{::field.name}}" id="sp_formfield_{{::field.name}}" class="form-control" maxlength="{{::field.max_length}}" data-type="{{::field.type}}" ng-model="field.stagedValue" ng-model-options="{allowInvalid: true}" ng-change="stagedValueChange()" autocomplete="off" ng-readonly="field.isReadonly()" ng-attr-placeholder="{{field.placeholder}}" type="text" title="{{accessible ? field.hint : ''}}" tooltip-top="true" tooltip-toggle="{{accessible}}"></input><sp-textarea ng-if="::field.max_length &gt;= 256 &amp;&amp; !field._force_single_line" field="field" name="{{::field.name}}" id="sp_formfield_{{::field.name}}" class="form-control" data-type="{{::field.type}}" ng-model="field.stagedValue" ng-model-options="{allowInvalid: true}" ng-change="stagedValueChange()" ng-readonly="field.isReadonly()"></sp-textarea></span><p ng-if="::field.help_text" title="{{::field.help_tag}}" class="help-block" ng-bind="::field.help_text"></p></span><div ng-show="field.messages"><div ng-repeat="message in field.messages" class="wrapper-xs r m-t-xs" ng-class="{'bg-danger': message.type == 'error', 'bg-info': message.type == 'info'}">{{message.message}}</div></div></div></script><script id="sp_reference_field.xml" type="text/ng-template"><span class="ref-picker-container"><div class="add-on" ng-if="field.value != ''"><button type="button" class="btn btn-default bg-white lookup" ng-click="openReference(field, formModel.view)" ng-disabled="field.isReadonly() &amp;&amp; !field.readonlyClickthrough" title="Click to Preview {{field.displayValue}}"><span class="fa fa-info-circle"></span><span class="sr-only">Click to Preview {{field.displayValue}}</span></button></div><div class="reference"><sp-reference-element field="field" sn-select-width="100%" ref-table="formModel.table" ref-id="formModel.sys_id" glide-form="getGlideForm()" sn-options="{placeholder: field.placeholder}" record-values="getEncodedRecordValues()" sn-disabled="field.isReadonly()" label-id="sp_reference_element_sr_{{::field.name}}"></sp-reference-element></div></span></script><script id="sp_model.xml" type="text/ng-template"><div><sp-variable-layout></sp-variable-layout><div ng-init="execItemScripts()"></div></div></script><script id="sp_editable_field.xml" type="text/ng-template"><span><small ng-if="block &amp;&amp; fieldModel.displayValue" class="text-muted">{{fieldModel.label}}</small><span class="sp-editable-field" ng-style="blockDisplay" ng-class="{'editable-underline': editable}"><span ng-if="editable" ng-class="{'text-muted': !fieldModel.displayValue}" uib-popover-template="'sp_editable_popover.xml'" popover-placement="auto bottom" popover-is-open="shadowModel.popoverIsOpen" ng-click="shadowModel.popoverIsOpen = !shadowModel.popoverIsOpen" class="show-text bs-popover editable-text popover-trigger-{{::fieldID}}"><span ng-switch="fieldModel.type"><span ng-switch-when="user_image"><img ng-if="fieldModel.displayValue !=''" ng-src="{{fieldModel.displayValue}}"></img><span ng-if="fieldModel.displayValue ==''">Upload an image</span></span><span ng-switch-default="true"><span aria-label="{{fieldModel.label}} - {{fieldModel.displayValue || '(Empty)'}} - Press enter to edit" ng-if="!block" tabindex="0">{{fieldModel.displayValue || "(Empty)"}}</span><span ng-if="block" tabindex="0" aria-label="{{fieldModel.label}} - {{fieldModel.displayValue || '(Empty)'}} - Press enter to edit">{{fieldModel.displayValue || fieldModel.label}}</span></span></span></span><span ng-if="!editable" class="show-text" ng-switch="fieldModel.type"><span ng-switch-when="user_image"><img ng-if="fieldModel.displayValue !=''" ng-src="{{fieldModel.displayValue}}"></img><span ng-if="fieldModel.displayValue ==''">Upload an image</span></span><span ng-switch-default="true">{{fieldModel.displayValue}}</span></span></span></span></script><script id="sp_editable_field2.xml" type="text/ng-template"><form ng-submit="saveForm();"><sp-form-field form-model="fieldModel" field="fieldModel" glide-form="getGlideForm()"></sp-form-field></form></script><script id="sp_editable_popover.xml" type="text/ng-template"><div style="min-width: 250px;" class="popover-{{::fieldID}}"><h3 class="popover-title" ng-bind="title" ng-show="title"></h3><div class="popover-content"><form id="editableSaveForm" ng-submit="saveForm();"><sp-form-field form-model="shadowModel" field="shadowModel" glide-form="getGlideForm()"></sp-form-field></form></div><div class="popover-footer"><button ng-click="saveForm();" type="button" class="m-b-xs m-r-xs btn btn-primary pull-right">Save</button><button ng-click="closePopover();" type="button" class="m-b-xs m-r-xs btn btn-default pull-right">Close</button></div></div></script><script id="sp_element_duration.xml" type="text/ng-template"><div class="form-inline"><now-message key="days" value="Days"></now-message><now-message key="hours" value="Hours"></now-message><now-message key="minutes" value="Minutes"></now-message><now-message key="seconds" value="Seconds"></now-message><div class="form-group"><div ng-repeat="unit in visibleUnits" class="input-group input-group-sm col-xs-{{12 / visibleUnits.length}}"><label ng-if="showLabel(unit)" class="input-group-addon text-capitalize" for="dur-{{unit}}" sn-bind-i18n="{{unit}}"></label><input type="text" class="form-control" id="dur-{{unit}}" ng-model="parts[unit]" ng-disabled="field.isReadonly()" ng-change="updateDuration()" title="{{unit.charAt(0).toUpperCase() + unit.slice(1)}}"></input></div></div></div></script><script id="sp_element_currency.xml" type="text/ng-template"><div class="input-group"><span class="input-group-addon input-group-select"><span style="position: relative; display: inline-block;"><select style="min-width: 75px" class="form-control" ng-model="field.currencyCode" ng-options="c.code as c.symbol for c in field.currencyCodes" ng-disabled="field.isReadonly()" ng-change="formatValue(true)"></select><i aria-hidden="true" class="select-indicator fa fa-chevron-down"></i></span></span><input name="{{::field.name}}" id="sp_formfield_{{::field.name}}" class="form-control decimal" maxlength="14" data-type="{{::field.type}}" ng-model="field.currencyValue" ng-model-options="{allowInvalid: true}" ng-change="formatValue()" autocomplete="off" ng-readonly="field.isReadonly()"></input></div></script><script id="sp_element_email.xml" type="text/ng-template"><span class="ng-form-element"><span sn-form-group="" class="input-group"><input name="{{::field.name}}" id="sp_formfield_{{::field.name}}" autocomplete="off" class="form-control" ng-model="field.stagedValue" ng-model-options="{allowInvalid: true}" ng-change="stagedValueChange()" ng-disabled="field.isReadonly()" placeholder="{{field.placeholder}}" maxlength="{{::field.max_length}}" data-type="{{::field.type}}"></input><span class="input-group-btn"><a ng-href="{{field.stagedValue ? ('mailto:' + field.stagedValue) : '#'}}" class="btn-ref btn btn-default" role="button" ng-disabled="field.isReadonly()" title="Send an email to this address"><i class="fa fa-envelope-o" aria-hidden="true"></i><span class="sr-only">Send an email to this address</span></a></span></span></span></script><script id="sp_element_mask.xml" type="text/ng-template"><span class="ng-form-element" ng-class="{'has-error' : field.isInvalid}"><span><input name="{{::field.name}}" id="sp_formfield_{{::field.name}}" type="password" autocomplete="off" class="form-control" ng-model="field.stagedValue" ng-model-options="{getterSetter: true}" ng-change="isConfirmed()" ng-disabled="field.isReadonly()" placeholder="{{field.placeholder}}" maxlength="{{::field.max_length}}"></input></span><span ng-if="field.useConfirmation"><label class="field-label">{{reEnter}}</label><input name="sp_formfield_confirm.{{::field.name}}" id="sp_formfield_confirm.{{::field.name}}" type="password" autocomplete="off" class="form-control" ng-disabled="field.isReadonly()" ng-change="isConfirmed()" ng-model="field.confirmPassword" ng-model-options="{getterSetter: true}" placeholder="{{field.placeholder}}" maxlength="{{::field.max_length}}"></input><span ng-if="field.isInvalid" class="sp-date-format-info" style="display:table-row;" aria-hidden="true">{{misMatch}}</span></span></span></script><script id="angular.do?sysparm_type=get_partial&amp;name=directive.snImageUploader" type="text/ng-template"><div class="sn-component sn-component-image-upload"><input ng-show="false" type="file" ng-file-select="onFileSelect($files)"></input><div ng-file-drop="onFileSelect($files)" ng-file-drag-over-class="sn-dragover" title="{{getTitle()}}" style="margin-top: .5em;"><div style="position:relative; display: inline-block;"><div ng-if="!uploading" ng-click="openFileSelector($event)" style="cursor: pointer; margin-bottom: .25em; margin-right: 0.25em; display: inline-block;"><button class="btn btn-primary"><sn-glyph char="upload"></sn-glyph><small>{{uploadMessage}}</small></button></div><span class="upload-container" ng-click="activateUpload($event)" ng-if="!uploading" ng-transclude=""></span></div><div ng-if="uploading" style="position:relative; display: inline-block;"><button class="btn btn-default"><sn-glyph char="refresh"></sn-glyph><small>Uploading</small></button></div><div ng-if="src" ng-click="deleteAttachment()" style="cursor: pointer; display: inline-block;" title="Immediately delete this image"><button class="btn btn-default"><sn-glyph char="remove"></sn-glyph><small>Delete</small></button></div></div></div></script><script id="sp_variable_layout.xml" type="text/ng-template"><fieldset ng-repeat="container in containers" ng-show="paintForm(container)"><div ng-if="(container.caption || container.captionDisplay)"><legend class="h4">{{container.captionDisplay || container.caption}}</legend><p ng-if="::formModel._fields[container.name].help_text" title="{{::formModel._fields[container.name].help_tag}}" class="help-block" ng-bind="::formModel._fields[container.name].help_text"></p><span ng-if="::formModel._fields[container.name].instructions" ng-bind-html="::trustedHTML(formModel._fields[container.name].instructions)"></span></div><div class="row"><div ng-repeat="column in container.columns" class="col-md-{{::12 / container.columns.length }}"><div ng-switch="::f.type" ng-repeat="f in ::column.fields" id="{{::getVarID(f)}}" ng-class="::{'form-inline': isInlineForm === true }"><div ng-switch-when="label" ng-if="formModel._fields[f.name]" ng-show="formModel._fields[f.name].isVisible()"><label ng-bind="f.label"></label><p ng-if="formModel._fields[f.name].help_text" title="{{formModel._fields[f.name].help_tag}}" class="help-block" ng-bind="formModel._fields[f.name].help_text"></p><span ng-if="formModel._fields[f.name].instructions" ng-bind-html="::trustedHTML(formModel._fields[f.name].instructions)"></span><hr class="sp_label_hr"></hr></div><sp-form-field ng-switch-when="field" ng-if="formModel._fields[f.name]" form-model="formModel" field="formModel._fields[f.name]" glide-form="getGlideForm()" ng-show="formModel._fields[f.name].isVisible()"></sp-form-field><sp-variable-layout ng-switch-when="container" ng-init="containers=[f]"></sp-variable-layout><sp-checkbox-group ng-switch-when="checkbox_container" name="f.name" form-model="formModel" containers="f.containers" glide-form="getGlideForm()" class="checkbox-container"></sp-checkbox-group><sp-widget ng-switch-when="formatter" ng-if="formModel._formatters[f.id].widgetInstance" widget="formModel._formatters[f.id].widgetInstance" page="{g_form: getGlideForm()}"></sp-widget><hr ng-switch-when="break"></hr></div></div></div></fieldset></script><script id="sp_checkbox_group.xml" type="text/ng-template"><fieldset ng-show="field.isVisible()"><div ng-repeat="container in containers"><label class="field-label" title="{{::field.hint}}" tooltip-right="true" ng-if="::field.render_label"><span class="field-decorations"><span ng-show="field.isMandatory()" class="fa fa-asterisk mandatory" ng-class="{'mandatory-filled': field.mandatory_filled()}" title="Mandatory" style="padding-right: .25em" aria-label="{{field.mandatory_filled()? 'Mandatory Filled ' : 'Mandatory '}}"></span><span ng-repeat="decoration in field.decorations" class="decoration {{decoration.icon}}" title="{{decoration.text}}"></span></span>{{field.label}}<span class="sr-only">{{::field.hint}}</span></label><div><span ng-if="::field.help_text" title="{{::field.help_tag}}" class="help-block" ng-bind="::field.help_text"></span><span ng-if="::field.instructions" ng-bind-html="::trustedHTML(field.instructions)"></span></div><div class="row"><div ng-repeat="column in container.columns" class="col-md-{{::12 / container.columns.length }}"><div ng-repeat="f in ::column.fields" id="{{::getVarID(f)}}" ng-class="::{'form-inline': isInlineForm === true , 'sp-sc-single-checkbox' : !field.render_label}"><span ng-if="!field.render_label &amp;&amp; field.mandatory &amp;&amp; formModel._fields[f.name].isVisible()" class="fa fa-asterisk mandatory" ng-class="{'mandatory-filled': field.mandatory_filled()}" title="Mandatory" style="padding-right: .25em"></span><sp-form-field ng-if="formModel._fields[f.name]" form-model="formModel" field="formModel._fields[f.name]" glide-form="getGlideForm()" ng-show="formModel._fields[f.name].isVisible()"></sp-form-field></div></div></div></div></fieldset></script><script id="sp_announcements.xml" type="text/ng-template"><div class="sp-announcement-root" ng-class="{'accessibility-off': c.accessibilityOff, expanded: c.showAll, single: c.totalAnnouncements === 1}" ng-if="c.totalAnnouncements !== 0"><div class="sp-announcement-list"><div ng-repeat="a in c.announcements" class="sp-announcement" aria-live="assertive" aria-label="{{::a.glyphAltText}} {{::c.i18n.announcement}}" ng-style="::c.getStyle(a)"><div class="content-container"><div class="msg" ng-init="c.linkSetup(a)"><div class="title-container" ng-style="::{justifyContent: c.getJustifyContentValue(a)}"><div class="icon" ng-style="::{position: c.getAlignementContentValue(a)}" aria-label="{{::a.glyphAltText}} {{::c.i18n.announcement}}"><span class="glyphicon fa" ng-class="::('fa-' + a.glyph)" aria-label="{{::a.glyphAltText}}" aria-hidden="true" alt="{{::a.glyphAltText}}" data-toggle="tooltip" data-placement="bottom" title="{{::a.glyphAltText}}"></span></div><div ng-if="a.linkType !== 'title'" class="title" ng-bind="::a.title"></div><a class="info-link title" ng-if="a.linkType === 'title'" ng-bind="::a.title" ng-href="{{::a.targetLink}}" target="{{a.linkTarget}}" aria-label="{{::c.i18n.moreInfo}} {{::a.title}}" ng-style="::{color: c.getStyle(a).color}"></a></div><p class="content" ng-bind="::a.summary" ng-style="::{textAlign: c.getJustifyContentValue(a)}"></p><a class="info-link" ng-if="a.linkType === 'normal'" ng-bind="::a.targetLinkText" ng-href="{{::a.targetLink}}" target="{{a.linkTarget}}" aria-label="{{::a.targetLinkText}}" ng-style="::{color: c.getStyle(a).color}"></a></div></div><span ng-if="::a.dismissOption !== 'NOT_DISMISSIBLE'" ng-click="::c.dismiss(a.id)" aria-label="{{::c.i18n.dismiss}} {{::c.i18n.announcement}} {{::a.title}}" class="close glyphicon glyphicon-remove" tabindex="{{$index + 1}}" ng-style="::{color: c.getStyle(a).color}"><a ng-click="::c.dismiss(a.id)" href="#" ng-bind="::c.i18n.dismiss"></a></span></div></div><div class="sp-announcement-list-actions" ng-if="c.totalAnnouncements &gt;= 1" ng-click="::c.toggleShowAll()" tabindex="{{c.totalAnnouncements + 1}}" ng-style="c.getFirstStyle()" aria-label="{{c.showAll ? c.i18n.collapse : c.i18n.expand}} {{::c.i18n.announcements}}"><span ng-if="!c.showAll" class="count">{{::c.i18n.oneOf}}
+				{{c.totalAnnouncements}}</span><span ng-if="!c.showAll" class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span><span ng-if="c.showAll" class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></div></div></script><script type="text/ng-template" id="sp-modal.html"><div class="modal-header" ng-style="options.headerStyle"><button type="button" class="close pull-right" ng-click="$dismiss()" aria-label="Close modal">×</button><h4 class="modal-title" ng-bind-html="options.title"></h4></div><div class="modal-body" ng-keyup="keyPress($event.keyCode)"><p ng-if="options.message" ng-bind-html="options.message"></p><p ng-if="options.errorMessage" class="alert alert-danger ng-binding ng-scope" role="alert" ng-bind-html="options.errorMessage"></p><div ng-if="options.widget"><sp-widget widget="options.widget"></sp-widget></div><div ng-if="options.input"><form name="form.xpForm" ng-if="options.input" ng-submit="submit()"><div class="form-group"><label for="xpInput">{{options.label}}</label><input id="xpInput" type="text" class="form-control" placeholder="{{options.label}}" ng-model="input.value" required="true" ng-change="changed=true" ng-if="!options.values || options.values.length === 0" autocomplete="off" autofocus="autofocus"></input><div class="input-group" ng-if="options.values"><input id="xpInput" type="text" class="form-control" placeholder="{{options.label}}" ng-model="input.value" required="true" ng-change="changed=true" autocomplete="off" autofocus="autofocus"></input><div class="input-group-btn" dropdown="true"><button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle="true" data-toggle="dropdown"><span class="caret"></span></button><ul class="dropdown-menu pull-right"><li ng-repeat="value in options.values"><a href="" ng-click="input.name = value">{{value}}</a></li></ul></div></div></div></form></div></div><div class="modal-footer" ng-style="options.footerStyle"><button ng-repeat="button in options.buttons track by button.label" sp-focus-if="button.focus" ng-disabled="button.primary &amp;&amp; options.input &amp;&amp; form.xpForm.$invalid" class="btn btn-default {{button.class}}" ng-class="{'btn-primary':button.primary}" ng-click="buttonClicked(button)">{{button.label}}</button></div></script><style>.modal .panel {
+		margin-bottom: 0;
+	}</style><script type="text/ng-template" id="sp_form_modal"><div class="modal-body" style="padding: 0"><sp-widget widget="item.form"></sp-widget></div></script><script type="text/ng-template" id="sp_modal"><div class="modal-header"><button type="button" class="close" ng-click="cancel()">X</button><h4>This is the title</h4></div><div class="modal-body">{{item.name}}</div><div class="modal-footer"><button class="btn btn-default" ng-click="cancel()">Cancel</button><button class="btn btn-primary" ng-click="ok()">OK</button></div></script><script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=sn_avatar.xml"><div class="avatar-container" ng-class="avatarType()" title="{{ avatartooltip() }}"><div class="avatar soloAvatar top" ng-if="(users.length &gt; 1 &amp;&amp; !groupAvatar)" context-menu="contextOptions"><div class="sub-avatar" ng-style="getBackgroundStyle(users[1])"><span ng-if="!users[1].avatar">{{ users[1].initials }}</span></div></div><div class="avatar soloAvatar bottom" context-menu="contextOptions"><div class="sub-avatar" ng-style="getBackgroundStyle(users[0] || primary)"><span ng-if="(!users[0].avatar &amp;&amp; !groupAvatar)">{{ users[0].initials }}</span></div></div><div class="avatar soloAvatar top" ng-if="users.length &gt; 2 &amp;&amp; !groupAvatar" context-menu="contextOptions"><div class="sub-avatar" ng-style="getBackgroundStyle(users[2])"><span ng-if="!users[2].avatar">{{ users[2].initials }}</span></div></div><div class="avatar soloAvatar top" ng-if="users.length &gt; 3 &amp;&amp; !groupAvatar" context-menu="contextOptions"><div class="sub-avatar" ng-style="getBackgroundStyle(users[3])"><span ng-if="!users[3].avatar">{{ users[3].initials }}</span></div></div><span class="inner-details" ng-transclude=""></span><sn-presence ng-if="::presenceEnabled" user="(users[0].userID || users[0].document)"></sn-presence></div></script><script type="text/ng-template" id="angular.do?sysparm_type=get_partial&amp;name=sp_tinymce_editor.xml"><div><textarea ui-tinymce="tinyMCEOptions" name="{{attrs.name}}" ng-model="model" ng-model-options="options" ng-change="onChangeModel()" rows="10"></textarea><input ng-file-select="attachFiles({files: $files})" ng-click="$event.stopPropagation();" tabindex="-1" aria-hidden="true" multiple="" type="file" style="display: none;"></input></div></script><now-message key="Created" value="Created"></now-message><now-message key="track requests from 'My Requests' in the navbar or click" value="track requests from My Requests in the navbar or click"></now-message><now-message key="here to view" value="here to view"></now-message><now-message key="Submitted" value="Submitted"></now-message><now-message key="after" value="after"></now-message><now-message key="at or after" value="at or after"></now-message><now-message key="is anything" value="is anything"></now-message><now-message key="before" value="before"></now-message><now-message key="at or before" value="at or before"></now-message><now-message key="is empty" value="is empty"></now-message><now-message key="is empty string" value="is empty string"></now-message><now-message key="ends with" value="ends with"></now-message><now-message key="is" value="is"></now-message><now-message key="greater than" value="greater than"></now-message><now-message key="greater than or is" value="greater than or is"></now-message><now-message key="is a" value="is a"></now-message><now-message key="contains" value="contains"></now-message><now-message key="less than" value="less than"></now-message><now-message key="less than or is" value="less than or is"></now-message><now-message key="is not empty" value="is not empty"></now-message><now-message key="is not" value="is not"></now-message><now-message key="does not contain" value="does not contain"></now-message><now-message key="not on" value="not on"></now-message><now-message key="on" value="on"></now-message><now-message key="starts with" value="starts with"></now-message><now-message key="Open" value="Open"></now-message><now-message key="Knowledge" value="Knowledge"></now-message><now-message key="Catalog" value="Catalog"></now-message><now-message key="Requests" value="Requests"></now-message><now-message key="All" value="All"></now-message><now-message key="Searching..." value="Searching..."></now-message><now-message key="Price" value="Price"></now-message><now-message key="Recurring price" value="Recurring price"></now-message><now-message key="Submit" value="Submit"></now-message><now-message key="price_subtract" value="subtract"></now-message><now-message key="price_add" value="-add"></now-message><now-message key="has added" value="has added"></now-message><now-message key="will add" value="will add"></now-message><now-message key="has added {0}" value="has added {0}"></now-message><now-message key="will add {0}" value="will add {0}"></now-message><now-message key="has added {0} | has added {1}" value="has added {0} | has added {1}"></now-message><now-message key="will add {0} | will add {1}" value="will add {0} | will add {1}"></now-message><now-message key="add {0} | add {1}" value="add {0} | add {1}"></now-message><now-message key="add {0} | subtract {1}" value="add {0} | subtract {1}"></now-message><now-message key="subtract {0} | add {1}" value="subtract {0} | add {1}"></now-message><now-message key="add {0}" value="add {0}"></now-message><now-message key="subtract {0} | subtract {1}" value="subtract {0} | subtract {1}"></now-message><now-message key="subtract {0}" value="subtract {0}"></now-message><now-message key="Mandatory - " value="Mandatory - "></now-message><now-message key="There was an error processing your request" value="There was an error processing your request"></now-message><now-message key="Drag image or click to select" value="Drag image or click to select"></now-message><now-message key="Instance Options" value="Instance Options"></now-message><now-message key="Instance in Page Editor" value="Instance in Page Editor"></now-message><now-message key="Page in Designer" value="Page in Designer"></now-message><now-message key="Edit Container Background" value="Edit Container Background"></now-message><now-message key="Widget Options Schema" value="Widget Options Schema"></now-message><now-message key="Widget in Form Modal" value="Widget in Form Modal"></now-message><now-message key="Widget in Editor" value="Widget in Editor"></now-message><now-message key="Log to console" value="Log to console"></now-message><now-message key="generated in" value="generated in"></now-message><now-message key="OK" value="OK"></now-message><now-message key="Cancel" value="Cancel"></now-message><now-message key="Keywords" value="Keywords"></now-message><now-message key="Save Filter" value="Save Filter"></now-message><now-message key="Add attachment" value="Add attachment"></now-message><now-message key="Lookup using list" value="Lookup using list"></now-message><now-message key="Closing modal page" value="Closing modal page"></now-message><now-message key="Attachment" value="Attachment"></now-message><now-message key="Enable edit mode on attachments" value="Enable edit mode on attachments"></now-message><now-message key="Finish editing attachments" value="Finish editing attachments"></now-message><now-message key="Edit" value="Edit"></now-message><now-message key="Done" value="Done"></now-message><now-message key="Attachments" value="Attachments"></now-message><now-message key="Delete" value="Delete"></now-message><now-message key="Enter date in format" value="Enter date in format"></now-message><now-message key="Use format" value="Use format"></now-message><now-message key="Entered date not valid. Enter date in format" value="Entered date not valid. Enter date in format"></now-message><now-message key="Mandatory" value="Mandatory"></now-message><now-message key="Remove" value="Remove"></now-message><now-message key="Collapse" value="Collapse"></now-message><now-message key="Expand" value="Expand"></now-message><now-message key="announcement" value="announcement"></now-message><now-message key="announcements" value="announcements"></now-message><now-message key="More information about" value="More information about"></now-message><now-message key="Dismiss" value="Dismiss"></now-message><now-message key="1 of" value="1 of"></now-message><now-message key="Specified username does not match with the username of currently logged in user" value="Specified username does not match with the username of currently logged in user"></now-message><now-message key="User name or password invalid" value="User name or password invalid"></now-message><now-message key="User name, password or token invalid" value="User name, password or token invalid"></now-message><now-message key="Credentials for Approver and User logged in do not match" value="Credentials for Approver and User logged in do not match"></now-message><now-message key="Additional authentication required, enter your username, password and token to continue." value="Additional authentication required, enter your username, password and token to continue."></now-message><now-message key="Additional authentication is required, enter your usename and password to continue." value="Additional authentication is required, enter your usename and password to continue."></now-message><now-message key="Approver authentication" value="Approver authentication"></now-message><now-message key="Confirmation must match" value="Confirmation must match"></now-message><now-message key="Re-enter" value="Re-enter"></now-message><now-message key="Save Changes" value="Save changes"></now-message><now-message key="Do you want to save your changes before leaving this page?" value="Do you want to save your changes before leaving this page?"></now-message><now-message key="Discard" value="Discard"></now-message><now-message key="Save" value="Save"></now-message><now-message key="%d ago" value="%d ago"></now-message><now-message key="%d from now" value="%d from now"></now-message><now-message key="less than a minute" value="less than a minute"></now-message><now-message key="just now" value="just now"></now-message><now-message key="about a minute" value="%dm"></now-message><now-message key="%d minutes" value="%dm"></now-message><now-message key="about an hour" value="about an hour"></now-message><now-message key="about %d hours" value="%dh"></now-message><now-message key="a day" value="a day"></now-message><now-message key="%d days" value="%dd"></now-message><now-message key="about a month" value="about a month"></now-message><now-message key="%d months" value="%dmo"></now-message><now-message key="about a year" value="about a year"></now-message><now-message key="%d years" value="%dy"></now-message><now-message key="today" value="Today"></now-message><now-message key="{0} is typing" value="{0} is typing"></now-message><now-message key="{0} is viewing" value="{0} is viewing"></now-message><now-message key="{0} has entered" value="{0} has entered"></now-message><now-message key="{0} has probably left" value="{0} has probably left"></now-message><now-message key="{0} has exited" value="{0} has exited"></now-message><now-message key="{0} is offline" value="{0} is offline"></now-message><now-message key="entered" value="entered"></now-message><now-message key="online" value="Online"></now-message><now-message key="viewing" value="viewing"></now-message><now-message key="maybe offline" value="maybe offline"></now-message><now-message key="probably offline" value="probably offline"></now-message><now-message key="offline" value="Offline"></now-message><now-message key="Activities: {0}" value="Activities: {0}"></now-message></body>
